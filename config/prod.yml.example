@@ -1,0 +1,5 @@
+JWT_key: thisIsSecretSoChangeThis
+connection_string: null
+database: null
+debug: false
+migrations_path: migrations/data
