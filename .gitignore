@@ -23,6 +23,16 @@ _testmain.go
 *.test
 *.prof
 
+# Frontend
+client/node_modules
+client/npm-debug.log
+
+client/web/css/*
+client/web/js/*
+client/web/fonts/*
+
+client/.eslintcache
+
 # Custom
 srs-project
 error.log

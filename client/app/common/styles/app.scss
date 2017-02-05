@@ -1,0 +1,170 @@
+// Foundation
+@import './settings';
+@import 'foundation-apps/scss/foundation';
+
+// Custom components
+@import './datagrid';
+
+body
+{
+
+}
+
+#app
+{
+
+}
+
+.app-header
+{
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(230,230,230,0.7);
+  padding-right: 15px;
+
+  .logo
+  {
+    a
+    {
+      padding: 15px;
+      text-transform: uppercase;
+      color: $dark-color;
+      font-size: rem-calc(24);
+
+      &:hover
+      {
+          color: $primary-color;
+      }
+    }
+  }
+
+  nav
+  {
+    ul.menu-bar
+    {
+      li a:hover
+      {
+        color: $light;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.content
+{
+  padding: 15px;
+
+  > div {
+    width: 100%;
+  }
+
+  .card
+  {
+    > .card-divider
+    {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: rem-calc(14);
+      color: $dark-color;
+      border-bottom: 1px solid $gray-light;
+    }
+  }
+}
+
+// Utilities
+
+.link-group
+{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: rem-calc(14);
+  white-space: nowrap;
+}
+
+.delete-link
+{
+  color: $alert-color;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.ttu
+{
+  text-transform: uppercase;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.has-error
+{
+  color: $alert-color;
+
+  label
+  {
+    color: $alert-color;
+  }
+
+  input,
+  textarea,
+  select
+  {
+    &,
+    &:hover,
+    &:active,
+    &:focus
+    {
+      border-color: $alert-color;
+    }
+  }
+}
+
+.notification
+{
+  padding: 10px;
+
+  & + * {
+    margin-top: 10px;
+  }
+
+  &.error
+  {
+    background-color: $alert-color;
+    color: isitlight($alert-color);
+  }
+
+  &.success
+  {
+      background-color: $success-color;
+      color: isitlight($success-color);
+  }
+  padding: 10px;
+
+  &.warning
+  {
+    background-color: $warning-color;
+    color: isitlight($warning-color);
+  }
+
+  &.info
+  {
+      background-color: $info-color;
+      color: isitlight($info-color);
+  }
+}
+
+.modal-overlay.overlay-close-enabled
+{
+  cursor: pointer;
+
+  .modal
+  {
+    cursor: default;
+  }
+}
