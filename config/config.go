@@ -54,7 +54,7 @@ func GetConfig() Config {
 	}
 
 	// Load config file
-	configData, err := ioutil.ReadFile(fmt.Sprintf("%s/src/antonve/srs-project/config/%s", os.Getenv("GOPATH"), environment))
+	configData, err := ioutil.ReadFile(fmt.Sprintf("%s/src/srs-project/app/config/%s", os.Getenv("GOPATH"), environment))
 	if err != nil {
 		log.Fatalf("Could not load config for environment `%s`", environment)
 	}

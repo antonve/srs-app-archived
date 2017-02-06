@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"antonve/srs-project/config"
-	"antonve/srs-project/migrations"
+	"srs-project/app/config"
+	"srs-project/app/migrations"
 	"fmt"
 )
 

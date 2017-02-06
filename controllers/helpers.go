@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"log"
-	"antonve/srs-project/config"
-	"antonve/srs-project/models"
+	"srs-project/app/config"
+	"srs-project/app/models"
 	"net/http"
 
 	"runtime/debug"

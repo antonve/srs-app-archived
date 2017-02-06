@@ -3,7 +3,7 @@ package models
 import (
 	"database/sql"
 	"log"
-	"antonve/srs-project/config"
+	"srs-project/app/config"
 
 	// sqlx needs the mysql driver
 	_ "github.com/go-sql-driver/mysql"

@@ -34,6 +34,5 @@ client/web/fonts/*
 client/.eslintcache
 
 # Custom
-srs-project
 error.log
 config/*.yml

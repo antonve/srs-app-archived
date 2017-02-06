@@ -1,7 +1,7 @@
 package main
 
 import (
-	"antonve/srs-project/utils"
+	"srs-project/app/utils"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/standard"

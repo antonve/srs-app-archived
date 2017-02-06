@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"antonve/srs-project/config"
-	"antonve/srs-project/models"
-	"antonve/srs-project/models/enums"
+	"srs-project/app/config"
+	"srs-project/app/models"
+	"srs-project/app/models/enums"
 	"fmt"
 	"net/http"
 	"strconv"

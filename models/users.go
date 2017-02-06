@@ -1,7 +1,7 @@
 package models
 
 import (
-	"antonve/srs-project/models/enums"
+	"srs-project/app/models/enums"
 	"errors"
 	"fmt"
 

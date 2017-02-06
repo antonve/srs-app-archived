@@ -1,10 +1,10 @@
 package controllers_test
 
 import (
-	"antonve/srs-project/controllers"
-	"antonve/srs-project/models"
-	"antonve/srs-project/models/enums"
-	"antonve/srs-project/utils"
+	"srs-project/app/controllers"
+	"srs-project/app/models"
+	"srs-project/app/models/enums"
+	"srs-project/app/utils"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"

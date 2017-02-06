@@ -2,15 +2,15 @@ package migrations
 
 import (
 	"fmt"
-	"antonve/srs-project/config"
-	"antonve/srs-project/models"
+	"srs-project/app/config"
+	"srs-project/app/models"
 	"os"
 
 	"github.com/DavidHuie/gomigrate"
 )
 
 func getMigrator() (*gomigrate.Migrator, error) {
-	return gomigrate.NewMigrator(models.GetSQLDatabase(), gomigrate.Mariadb{}, fmt.Sprintf("%s/src/antonve/srs-project/%s", os.Getenv("GOPATH"), config.GetConfig().MigrationsPath))
+	return gomigrate.NewMigrator(models.GetSQLDatabase(), gomigrate.Mariadb{}, fmt.Sprintf("%s/src/srs-project/app/%s", os.Getenv("GOPATH"), config.GetConfig().MigrationsPath))
 }
 
 // Migrate migrates the database
