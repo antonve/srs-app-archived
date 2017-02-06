@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"srs-project/app/controllers"
+	"github.com/srs-project/app/controllers"
 
 	"github.com/labstack/echo"
 )

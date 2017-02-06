@@ -1,10 +1,10 @@
 package controllers_test
 
 import (
-	"srs-project/app/controllers"
-	"srs-project/app/models"
-	"srs-project/app/models/enums"
-	"srs-project/app/utils"
+	"github.com/srs-project/app/controllers"
+	"github.com/srs-project/app/models"
+	"github.com/srs-project/app/models/enums"
+	"github.com/srs-project/app/utils"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"

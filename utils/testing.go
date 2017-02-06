@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"srs-project/app/config"
-	"srs-project/app/migrations"
+	"github.com/srs-project/app/config"
+	"github.com/srs-project/app/migrations"
 	"fmt"
 )
 

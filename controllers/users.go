@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"srs-project/app/config"
-	"srs-project/app/models"
-	"srs-project/app/models/enums"
+	"github.com/srs-project/app/config"
+	"github.com/srs-project/app/models"
+	"github.com/srs-project/app/models/enums"
 	"fmt"
 	"net/http"
 	"strconv"

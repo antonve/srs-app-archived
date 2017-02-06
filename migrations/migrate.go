@@ -2,8 +2,8 @@ package migrations
 
 import (
 	"fmt"
-	"srs-project/app/config"
-	"srs-project/app/models"
+	"github.com/srs-project/app/config"
+	"github.com/srs-project/app/models"
 	"os"
 
 	"github.com/DavidHuie/gomigrate"

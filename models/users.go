@@ -1,7 +1,7 @@
 package models
 
 import (
-	"srs-project/app/models/enums"
+	"github.com/srs-project/app/models/enums"
 	"errors"
 	"fmt"
 

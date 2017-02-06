@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"log"
-	"srs-project/app/config"
-	"srs-project/app/models"
+	"github.com/srs-project/app/config"
+	"github.com/srs-project/app/models"
 	"net/http"
 
 	"runtime/debug"
