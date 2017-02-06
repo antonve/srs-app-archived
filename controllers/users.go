@@ -12,7 +12,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"gopkg.in/labstack/echo.v1"
+	"gopkg.in/labstack/echo.v2"
 )
 
 // APIUserLogin checks if user exists in database and returns jwt token if valid

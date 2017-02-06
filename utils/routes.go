@@ -3,7 +3,7 @@ package utils
 import (
 	"github.com/srs-project/app/controllers"
 
-	"gopkg.in/labstack/echo.v1"
+	"gopkg.in/labstack/echo.v2"
 )
 
 // SetupRouting Define all routes here
