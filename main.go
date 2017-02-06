@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/srs-project/app/utils"
 
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
-	"github.com/labstack/echo/middleware"
+	"gopkg.in/labstack/echo.v2"
+	"gopkg.in/labstack/echo.v2/engine/standard"
+	"gopkg.in/labstack/echo.v2/middleware"
 
 	"log"
 )

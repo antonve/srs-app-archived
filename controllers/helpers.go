@@ -9,7 +9,7 @@ import (
 	"runtime/debug"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"github.com/labstack/echo"
+	"gopkg.in/labstack/echo.v1"
 )
 
 // Return201 helper

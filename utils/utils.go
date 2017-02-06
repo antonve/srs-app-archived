@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"gopkg.in/labstack/echo.v1"
+	"gopkg.in/labstack/echo.v1/middleware"
 )
 
 // SetupStaticAssets Serve our static assets, the JS application
