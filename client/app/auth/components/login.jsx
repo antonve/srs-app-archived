@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
 import authActions from '../actions'
 
-class AuthLogin extends React.Component {
+class AuthLogin extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     currentUser: PropTypes.shape({
@@ -16,28 +16,25 @@ class AuthLogin extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props
 
-    if (this.checkIfLoggedIn()) {
+    if (this.checkIfLoggedIn) {
       browserHistory.push('/')
     } else {
-      this.username.focus()
       dispatch(authActions.reset())
     }
   }
 
   componentWillReceiveProps() {
-    if (this.checkIfLoggedIn()) {
+    if (this.checkIfLoggedIn) {
       browserHistory.push('/')
     }
   }
 
-  checkIfLoggedIn() {
+  get checkIfLoggedIn() {
     return this.props.currentUser !== null
   }
 
-  handleAuth(e) {
-    e.preventDefault()
-
-    const { username, password } = this
+  handleAuth = (e) => {
+    const { username, password } = this.refs
     const { dispatch } = this.props
     const params = {
       username: username.value,
@@ -63,17 +60,18 @@ class AuthLogin extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleAuth}>
-        <label htmlFor={this.username}>Username</label>
+      <form onSubmit={::this.handleAuth}>
+        <label>Username</label>
         <input
-          ref={(c) => { this.username = c; }}
+          ref="username"
           type="text"
           placeholder="Username"
           required
+          autoFocus
         />
-        <label htmlFor={this.password}>Password</label>
+        <label>Password</label>
         <input
-          ref={(c) => { this.password = c; }}
+          ref="password"
           type="password"
           placeholder="Password"
           required

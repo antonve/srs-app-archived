@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
 import authActions from '../actions'
 
-class AuthRegister extends React.Component {
+class AuthRegister extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     currentUser: PropTypes.shape({
@@ -17,7 +17,7 @@ class AuthRegister extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props
 
-    if (this.checkIfLoggedIn()) {
+    if (this.checkIfLoggedIn) {
       browserHistory.push('/')
     } else {
       this.username.focus()
@@ -26,7 +26,7 @@ class AuthRegister extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.checkIfLoggedIn()) {
+    if (this.checkIfLoggedIn) {
       browserHistory.push('/')
     }
 
@@ -37,25 +37,11 @@ class AuthRegister extends React.Component {
     }
   }
 
-  checkIfLoggedIn() {
+  get checkIfLoggedIn() {
     return this.props.currentUser !== null
   }
 
-  handleAuth(e) {
-    e.preventDefault()
-
-    const { username, password, displayName } = this
-    const { dispatch } = this.props
-    const params = {
-      username: username.value,
-      display_name: displayName.value,
-      password: password.value,
-    }
-
-    dispatch(authActions.register(params))
-  }
-
-  errors() {
+  get errors() {
     const { failed, error } = this.props
 
     if (failed) {
@@ -69,27 +55,41 @@ class AuthRegister extends React.Component {
     return null
   }
 
+  handleAuth = (e) => {
+    e.preventDefault()
+
+    const { username, password, displayName } = this.refs
+    const { dispatch } = this.props
+    const params = {
+      username: username.value,
+      display_name: displayName.value,
+      password: password.value,
+    }
+
+    dispatch(authActions.register(params))
+  }
+
   render() {
     return (
-      <form onSubmit={this.handleAuth}>
-        {::this.errors()}
-        <label htmlFor={this.username}>Username</label>
+      <form onSubmit={::this.handleAuth}>
+        {this.errors}
+        <label>Username</label>
         <input
-          ref={(c) => { this.username = c; }}
+          ref="username"
           type="text"
           placeholder="Username"
           required
         />
-        <label htmlFor={this.displayName}>Display name</label>
+        <label>Display name</label>
         <input
-          ref={(c) => { this.displayName = c; }}
+          ref="displayName"
           type="text"
           placeholder="Display name"
           required
         />
-        <label htmlFor={this.password}>Password</label>
+        <label>Password</label>
         <input
-          ref={(c) => { this.password = c; }}
+          ref="password"
           type="password"
           placeholder="Password"
           required

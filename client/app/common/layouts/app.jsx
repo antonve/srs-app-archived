@@ -10,7 +10,7 @@ import authActions from '../../auth/actions'
 class AppLayout extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
   }
 
   componentWillMount() {
