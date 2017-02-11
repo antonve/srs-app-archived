@@ -13,10 +13,16 @@ class AuthLogin extends Component {
     failed: PropTypes.bool,
   }
 
+  constructor(props) {
+    super(props)
+
+    this.handleAuth = this.handleAuth.bind(this)
+  }
+
   componentDidMount() {
     const { dispatch } = this.props
 
-    if (this.checkIfLoggedIn) {
+    if (this.isAuthenticated) {
       browserHistory.push('/')
     } else {
       dispatch(authActions.reset())
@@ -24,17 +30,15 @@ class AuthLogin extends Component {
   }
 
   componentWillReceiveProps() {
-    if (this.checkIfLoggedIn) {
+    if (this.isAuthenticated) {
       browserHistory.push('/')
     }
   }
 
-  get checkIfLoggedIn() {
-    return this.props.currentUser !== null
-  }
-
   handleAuth = (e) => {
-    const { username, password } = this.refs
+    e.preventDefault()
+
+    const { username, password } = this
     const { dispatch } = this.props
     const params = {
       username: username.value,
@@ -44,7 +48,11 @@ class AuthLogin extends Component {
     dispatch(authActions.login(params))
   }
 
-  errors() {
+  get isAuthenticated() {
+    return this.props.currentUser !== null
+  }
+
+  get errors() {
     const { failed } = this.props
 
     if (failed) {
@@ -60,10 +68,10 @@ class AuthLogin extends Component {
 
   render() {
     return (
-      <form onSubmit={::this.handleAuth}>
+      <form onSubmit={this.handleAuth}>
         <label>Username</label>
         <input
-          ref="username"
+          ref={(ref) => { this.username = ref }}
           type="text"
           placeholder="Username"
           required
@@ -71,14 +79,14 @@ class AuthLogin extends Component {
         />
         <label>Password</label>
         <input
-          ref="password"
+          ref={(ref) => { this.password = ref }}
           type="password"
           placeholder="Password"
           required
         />
         <div>
           <button type="submit" className="button">Log In</button>
-          {this.errors()}
+          {this.errors}
         </div>
       </form>
     )

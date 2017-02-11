@@ -14,10 +14,16 @@ class AuthRegister extends Component {
     error: PropTypes.string,
   }
 
+  constructor(props) {
+    super(props)
+
+    this.handleAuth = this.handleAuth.bind(this)
+  }
+
   componentDidMount() {
     const { dispatch } = this.props
 
-    if (this.checkIfLoggedIn) {
+    if (this.isAuthenticated) {
       browserHistory.push('/')
     } else {
       this.username.focus()
@@ -26,7 +32,7 @@ class AuthRegister extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.checkIfLoggedIn) {
+    if (this.isAuthenticated) {
       browserHistory.push('/')
     }
 
@@ -37,7 +43,21 @@ class AuthRegister extends Component {
     }
   }
 
-  get checkIfLoggedIn() {
+  handleAuth = (e) => {
+    e.preventDefault()
+
+    const { username, password, userDisplayName } = this
+    const { dispatch } = this.props
+    const params = {
+      username: username.value,
+      display_name: userDisplayName.value,
+      password: password.value,
+    }
+
+    dispatch(authActions.register(params))
+  }
+
+  get isAuthenticated() {
     return this.props.currentUser !== null
   }
 
@@ -55,41 +75,27 @@ class AuthRegister extends Component {
     return null
   }
 
-  handleAuth = (e) => {
-    e.preventDefault()
-
-    const { username, password, displayName } = this.refs
-    const { dispatch } = this.props
-    const params = {
-      username: username.value,
-      display_name: displayName.value,
-      password: password.value,
-    }
-
-    dispatch(authActions.register(params))
-  }
-
   render() {
     return (
       <form onSubmit={::this.handleAuth}>
         {this.errors}
         <label>Username</label>
         <input
-          ref="username"
+          ref={(ref) => { this.username = ref }}
           type="text"
           placeholder="Username"
           required
         />
-        <label>Display name</label>
+        <label>Display Name</label>
         <input
-          ref="displayName"
+          ref={(ref) => { this.userDisplayName = ref }}
           type="text"
-          placeholder="Display name"
+          placeholder="Display Name"
           required
         />
         <label>Password</label>
         <input
-          ref="password"
+          ref={(ref) => { this.password = ref }}
           type="password"
           placeholder="Password"
           required
