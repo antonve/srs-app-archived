@@ -1,18 +1,18 @@
 package controllers_test
 
 import (
-	"github.com/srs-project/app/controllers"
-	"github.com/srs-project/app/models"
-	"github.com/srs-project/app/models/enums"
-	"github.com/srs-project/app/utils"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
 
+	"github.com/srs-project/app/controllers"
+	"github.com/srs-project/app/models"
+	"github.com/srs-project/app/models/enums"
+	"github.com/srs-project/app/utils"
+
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
 	"github.com/stretchr/testify/assert"
 )
 
