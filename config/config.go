@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	yaml "gopkg.in/yaml.v2"
+	yaml "github.com/go-yaml/yaml"
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo/middleware"

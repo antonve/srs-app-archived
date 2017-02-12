@@ -1,5 +1,5 @@
-hash: 7c592b283aada0f6ddd5b24263a7cb0388b486fd1ddddbe1cd4535a7a8149c85
-updated: 2017-02-13T00:59:19.520292342+09:00
+hash: 6e344967a291d077e64f5c7fa96c3a8a9b64c88b53ac2056d65312e3e7ebf6bb
+updated: 2017-02-12T12:52:18.819926225-06:00
 imports:
 - name: github.com/DavidHuie/gomigrate
   version: 4004e6142040f5d622e9d2be6e833a4652741571
@@ -7,6 +7,8 @@ imports:
   version: 2268707a8f0843315e2004ee4f1d021dc08baedf
 - name: github.com/go-sql-driver/mysql
   version: 2e00b5cd70399450106cec6431c2e2ce3cae5034
+- name: github.com/go-yaml/yaml
+  version: a3f3340b5840cee44f372bddb5880fcbc419b46a
 - name: github.com/jmoiron/sqlx
   version: f980a91bdc37abef88269b8f122d7de6352102f5
   subpackages:
@@ -48,8 +50,6 @@ imports:
   version: aaabbdc969c3935a2a7f61efac801e7163c73a2a
   subpackages:
   - unix
-- name: gopkg.in/yaml.v2
-  version: a3f3340b5840cee44f372bddb5880fcbc419b46a
 testImports:
 - name: github.com/davecgh/go-spew
   version: 04cdfd42973bb9c8589fd6a731800cf222fde1a9
