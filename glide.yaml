@@ -8,6 +8,10 @@ import:
   subpackages:
   - bcrypt
 - package: gopkg.in/yaml.v2
+- package: github.com/labstack/echo
+  version: ~3.0
+- package: github.com/tylerb/graceful
+  version: ^1.2.15
 testImport:
 - package: github.com/stretchr/testify
   subpackages:
