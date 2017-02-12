@@ -38,3 +38,4 @@ client/.eslintcache
 error.log
 config/*.yml
 vendor/*
+srs-project
