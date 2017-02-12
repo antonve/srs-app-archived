@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"gopkg.in/labstack/echo.v2"
-	"gopkg.in/labstack/echo.v2/engine/standard"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/engine/standard"
 	"github.com/stretchr/testify/assert"
 )
 

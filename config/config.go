@@ -9,7 +9,7 @@ import (
 	yaml "gopkg.in/yaml.v2"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"gopkg.in/labstack/echo.v2/middleware"
+	"github.com/labstack/echo/middleware"
 )
 
 // Environment in which the application runs
