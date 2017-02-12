@@ -34,7 +34,7 @@ func TestCreateUser(t *testing.T) {
 	}
 	req.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
 	rec := httptest.NewRecorder()
-	c := e.NewContext(standard.NewRequest(req, e.Logger()), standard.NewResponse(rec, e.Logger()))
+	c := e.NewContext(req, rec)
 
 	if assert.NoError(t, controllers.APIUserRegister(c)) {
 		assert.Equal(t, http.StatusCreated, rec.Code)
@@ -57,7 +57,7 @@ func TestLoginUser(t *testing.T) {
 	}
 	req.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
 	rec := httptest.NewRecorder()
-	c := e.NewContext(standard.NewRequest(req, e.Logger()), standard.NewResponse(rec, e.Logger()))
+	c := e.NewContext(req, rec)
 
 	if assert.NoError(t, controllers.APIUserLogin(c)) {
 		// Check login response
