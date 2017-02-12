@@ -53,8 +53,16 @@ func GetConfig() Config {
 		return config
 	}
 
-	// Load config file
-	configData, err := ioutil.ReadFile(fmt.Sprintf("%s/src/github.com/srs-project/app/config/%s", os.Getenv("GOPATH"), environment))
+
+	// Get config file path
+	// @TODO: change how file path is handled
+	appPath := os.Getenv("APP_PATH")
+	if appPath == "" {
+		appPath = fmt.Sprintf("%s/src/github.com/srs-project/app", os.Getenv("GOPATH"))
+	}
+
+	// Load config file data
+	configData, err := ioutil.ReadFile(fmt.Sprintf("%s/config/%s", appPath, environment))
 	if err != nil {
 		log.Fatalf("Could not load config for environment `%s`", environment)
 	}

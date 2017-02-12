@@ -11,7 +11,13 @@ import (
 )
 
 func getMigrator() (*gomigrate.Migrator, error) {
-	return gomigrate.NewMigrator(models.GetSQLDatabase(), gomigrate.Mariadb{}, fmt.Sprintf("%s/src/github.com/srs-project/app/%s", os.Getenv("GOPATH"), config.GetConfig().MigrationsPath))
+	// @TODO: change how migration path is handled
+	appPath := os.Getenv("APP_PATH")
+	if appPath == "" {
+		appPath = fmt.Sprintf("%s/src/github.com/srs-project/app", os.Getenv("GOPATH"))
+	}
+
+	return gomigrate.NewMigrator(models.GetSQLDatabase(), gomigrate.Mariadb{}, fmt.Sprintf("%s/%s", appPath, config.GetConfig().MigrationsPath))
 }
 
 // Migrate migrates the database
