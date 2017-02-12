@@ -1,0 +1,22 @@
+hash: 8fb3d53dba23683b2aada9da13fa45588e84e0fa4b7ed7ad1622009bf22e0604
+updated: 2017-02-13T00:48:49.018376004+09:00
+imports:
+- name: github.com/DavidHuie/gomigrate
+  version: 4004e6142040f5d622e9d2be6e833a4652741571
+- name: github.com/dgrijalva/jwt-go
+  version: 2268707a8f0843315e2004ee4f1d021dc08baedf
+- name: github.com/go-sql-driver/mysql
+  version: 2e00b5cd70399450106cec6431c2e2ce3cae5034
+- name: github.com/jmoiron/sqlx
+  version: f980a91bdc37abef88269b8f122d7de6352102f5
+- name: golang.org/x/crypto
+  version: 453249f01cfeb54c3d549ddb75ff152ca243f9d8
+  subpackages:
+  - bcrypt
+- name: gopkg.in/yaml.v2
+  version: a3f3340b5840cee44f372bddb5880fcbc419b46a
+testImports:
+- name: github.com/stretchr/testify
+  version: 4d4bfba8f1d1027c4fdbe371823030df51419987
+  subpackages:
+  - assert

@@ -1,0 +1,14 @@
+package: github.com/srs-project/app
+import:
+- package: github.com/DavidHuie/gomigrate
+- package: github.com/dgrijalva/jwt-go
+- package: github.com/go-sql-driver/mysql
+- package: github.com/jmoiron/sqlx
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt
+- package: gopkg.in/yaml.v2
+testImport:
+- package: github.com/stretchr/testify
+  subpackages:
+  - assert
