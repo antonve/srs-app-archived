@@ -37,3 +37,5 @@ client/.eslintcache
 # Custom
 error.log
 config/*.yml
+vendor/*
+srs-project

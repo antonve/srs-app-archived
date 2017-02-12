@@ -9,7 +9,7 @@ import (
 	yaml "gopkg.in/yaml.v2"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"gopkg.in/labstack/echo.v2/middleware"
+	"github.com/labstack/echo/middleware"
 )
 
 // Environment in which the application runs
@@ -54,7 +54,7 @@ func GetConfig() Config {
 	}
 
 	// Load config file
-	configData, err := ioutil.ReadFile(fmt.Sprintf("%s/src/srs-project/app/config/%s", os.Getenv("GOPATH"), environment))
+	configData, err := ioutil.ReadFile(fmt.Sprintf("%s/src/github.com/srs-project/app/config/%s", os.Getenv("GOPATH"), environment))
 	if err != nil {
 		log.Fatalf("Could not load config for environment `%s`", environment)
 	}

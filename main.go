@@ -3,9 +3,8 @@ package main
 import (
 	"github.com/srs-project/app/utils"
 
-	"gopkg.in/labstack/echo.v2"
-	"gopkg.in/labstack/echo.v2/engine/standard"
-	"gopkg.in/labstack/echo.v2/middleware"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 
 	"log"
 )
@@ -26,5 +25,5 @@ func main() {
 	utils.SetupRouting(e)
 
 	// Start server
-	e.Run(standard.New(":3000"))
+	e.Start(":3000")
 }
