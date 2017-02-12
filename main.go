@@ -4,7 +4,6 @@ import (
 	"github.com/srs-project/app/utils"
 
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
 	"github.com/labstack/echo/middleware"
 
 	"log"
@@ -26,5 +25,5 @@ func main() {
 	utils.SetupRouting(e)
 
 	// Start server
-	e.Run(standard.New(":3000"))
+	e.Start(":3000")
 }

@@ -15,14 +15,11 @@ func SetupStaticAssets(e *echo.Echo) {
 	staticPath := os.Getenv("SRS_STATIC_FILES")
 	log.Printf("Serving static files from: %v", staticPath)
 
-	// Any file we can't find we redirect to the index
-	e.File("/*", staticPath+"/index.html")
-
 	// This is to serve assets like css and javascript
-	e.Use(middleware.StaticWithConfig(middleware.StaticConfig{
-		Root:   staticPath,
-		Browse: true,
-	}))
+	e.Static("/", staticPath)
+
+	// Any file we can't find we redirect to the index
+	e.File("/", staticPath+"/index.html")
 }
 
 // SetupErrorLogging Log to both file and stderr
