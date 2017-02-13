@@ -1,0 +1,5 @@
+JWT_key: thisIsSecretSoChangeThis
+connection_string: ubuntu@tcp(localhost:3306)/
+database: circle_test
+debug: true
+migrations_path: migrations/data
