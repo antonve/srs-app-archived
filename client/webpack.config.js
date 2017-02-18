@@ -7,10 +7,24 @@ const BUILD_DIR = path.resolve(__dirname, 'web')
 
 const config = {
   devtool: 'source-map',
+  // Multiple entry is allowed in webpack.
+  // What I think it does is, each entry wll go through the config.
+  // So in the case of react-hot-loader, it helps tell react-hot-loader that something has changed
+  // Outputs everything to the single output, or, if specified, to multiple outputs.
   entry: [
+    // Enables HMR for React. Webpack would tell this entry what has changed.
     'react-hot-loader/patch',
+
+    // This is the equivalent of webpack --inline. Without it, no HMR nor auto-reload
+    // Ignored if webpack-dev-server is not used, apparently
     'webpack-dev-server/client?http://localhost:3000',
+
+    // Tells webpack to enable HMR only when utilizing webpack-dev-server
+    // If 'only-' is omitted, HMR is enabled even on the backend site.
+    // TODO: Maybe optimize & control this through index.jsx and environment variables?
     'webpack/hot/only-dev-server',
+
+    // The file entry point
     `${APP_DIR}/index.jsx`,
   ],
   output: {
@@ -96,14 +110,16 @@ const config = {
     new ExtractTextPlugin({
       filename: 'css/bundle.css',
     }),
+     // Enable HMR globally
     new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
 
+    // Prints more readable module names in the browser console on HMR updates
+    // Seems to be mandatory for react-hot-loader 3.
     new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
 
-    new webpack.NoEmitOnErrorsPlugin(),
     // do not emit compiled assets that include errors
+    // Fail on compile is always good to have.
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
     host: 'localhost',
