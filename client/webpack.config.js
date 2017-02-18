@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -6,7 +7,12 @@ const BUILD_DIR = path.resolve(__dirname, 'web')
 
 const config = {
   devtool: 'source-map',
-  entry: `${APP_DIR}/index.jsx`,
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    `${APP_DIR}/index.jsx`,
+  ],
   output: {
     path: BUILD_DIR,
     filename: 'js/bundle.js',
@@ -34,9 +40,9 @@ const config = {
               loader: 'sass-loader',
               options: {
                 includePaths: [path.resolve(__dirname, 'node_modules')],
-              }
+              },
             },
-          ]
+          ],
         }),
       },
       {
@@ -90,7 +96,22 @@ const config = {
     new ExtractTextPlugin({
       filename: 'css/bundle.css',
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    // enable HMR globally
+
+    new webpack.NamedModulesPlugin(),
+    // prints more readable module names in the browser console on HMR updates
+
+    new webpack.NoEmitOnErrorsPlugin(),
+    // do not emit compiled assets that include errors
   ],
+  devServer: {
+    host: 'localhost',
+    port: 3000,
+    contentBase: BUILD_DIR,
+    historyApiFallback: true,
+    hot: true,
+  },
 };
 
 module.exports = config;
