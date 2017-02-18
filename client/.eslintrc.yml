@@ -6,6 +6,7 @@ rules:
     - 1
     - ignorePureComponents: true
   jsx-a11y/no-static-element-interactions: 0
+  curly: 2
 env:
   browser: true
   node: true

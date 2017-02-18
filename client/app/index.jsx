@@ -17,4 +17,7 @@ renderApp(App);
 // Careful with the line below,
 // second parameter of module.hot.accept accepts a callback that returns a render result,
 // and not the result of a render itself.
-if (module.hot) module.hot.accept('./app', () => renderApp(App));
+if (module.hot) {
+  module.hot.accept('./app', () => renderApp(App));
+}
+
