@@ -21,9 +21,6 @@ const config = {
         test: /\.jsx?$/,
         include: APP_DIR,
         loader: 'babel-loader',
-        options: {
-          presets: [ ['es2015', { modules: false }], 'react', 'stage-2', 'stage-0']
-        }
       },
       {
         test: /\.(scss|css)$/,
