@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -6,10 +7,30 @@ const BUILD_DIR = path.resolve(__dirname, 'web')
 
 const config = {
   devtool: 'source-map',
-  entry: `${APP_DIR}/index.jsx`,
+  // Multiple entry is allowed in webpack.
+  // What I think it does is, each entry wll go through the config.
+  // So in the case of react-hot-loader, it helps tell react-hot-loader that something has changed
+  // Outputs everything to the single output, or, if specified, to multiple outputs.
+  entry: [
+    // Enables HMR for React. Webpack would tell this entry what has changed.
+    'react-hot-loader/patch',
+
+    // This is the equivalent of webpack --inline. Without it, no HMR nor auto-reload
+    // Ignored if webpack-dev-server is not used, apparently
+    'webpack-dev-server/client?http://localhost:3000',
+
+    // Tells webpack to enable HMR only when utilizing webpack-dev-server
+    // If 'only-' is omitted, HMR is enabled even on the backend site.
+    // TODO: Maybe optimize & control this through index.jsx and environment variables?
+    'webpack/hot/only-dev-server',
+
+    // The file entry point
+    `${APP_DIR}/index.jsx`,
+  ],
   output: {
     path: BUILD_DIR,
     filename: 'js/bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
@@ -21,9 +42,6 @@ const config = {
         test: /\.jsx?$/,
         include: APP_DIR,
         loader: 'babel-loader',
-        options: {
-          presets: [ ['es2015', { modules: false }], 'react', 'stage-2', 'stage-0']
-        }
       },
       {
         test: /\.(scss|css)$/,
@@ -37,9 +55,9 @@ const config = {
               loader: 'sass-loader',
               options: {
                 includePaths: [path.resolve(__dirname, 'node_modules')],
-              }
+              },
             },
-          ]
+          ],
         }),
       },
       {
@@ -93,7 +111,24 @@ const config = {
     new ExtractTextPlugin({
       filename: 'css/bundle.css',
     }),
-  ],
-};
+     // Enable HMR globally
+    new webpack.HotModuleReplacementPlugin(),
 
-module.exports = config;
+    // Prints more readable module names in the browser console on HMR updates
+    // Seems to be mandatory for react-hot-loader 3.
+    new webpack.NamedModulesPlugin(),
+
+    // do not emit compiled assets that include errors
+    // Fail on compile is always good to have.
+    new webpack.NoEmitOnErrorsPlugin(),
+  ],
+  devServer: {
+    host: 'localhost',
+    port: 3000,
+    contentBase: BUILD_DIR,
+    historyApiFallback: true,
+    hot: true,
+  },
+}
+
+module.exports = config

@@ -1,15 +1,25 @@
+import { AppContainer } from 'react-hot-loader'
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import routes from './common/routes'
-import configureStore from './common/store/configure_store';
+import App from './app'
 
-const store = configureStore();
+/**
+ * Source: https://github.com/gaearon/react-hot-boilerplate/blob/next/src/index.js
+ */
+const appElement = document.getElementById('app')
+const renderApp = Component =>
+  render(
+    <AppContainer>
+      <Component/>
+    </AppContainer>,
+    appElement
+  )
 
-render(
-  <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>,
-  document.getElementById('app'),
-)
+renderApp(App)
+
+if (module.hot) {
+  // Careful with the line below,
+  // Second parameter of module.hot.accept accepts a callback that returns a render result,
+  // and not the result of a render itself.
+  module.hot.accept('./app', () => renderApp(App))
+}

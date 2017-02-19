@@ -3,6 +3,10 @@
 *.a
 *.so
 
+# IDE files
+/.idea
+/.vscode
+
 # Folders
 _obj
 _test
