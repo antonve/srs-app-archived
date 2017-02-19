@@ -30,6 +30,7 @@ const config = {
   output: {
     path: BUILD_DIR,
     filename: 'js/bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
