@@ -1,9 +1,9 @@
-const webpack = require('webpack');
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const APP_DIR = path.resolve(__dirname, 'app');
-const BUILD_DIR = path.resolve(__dirname, 'web');
+const APP_DIR = path.resolve(__dirname, 'app')
+const BUILD_DIR = path.resolve(__dirname, 'web')
 
 const config = {
   devtool: 'source-map',
@@ -129,6 +129,6 @@ const config = {
     historyApiFallback: true,
     hot: true,
   },
-};
+}
 
-module.exports = config;
+module.exports = config
