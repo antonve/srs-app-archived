@@ -2,18 +2,22 @@
   "name": "srs-project",
   "version": "1.0.0",
   "description": "SRS-Project client",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack -d --watch",
     "build": "webpack -p",
     "test:lint": "eslint . --ext .js --ext .jsx --cache"
   },
-  "engines": { "node": ">=6.1.0" },
-  "author": "antonve",
+  "engines": {
+    "node": ">=6.1.0"
+  },
+  "author": "srs-project",
   "license": "UNLICENSED",
   "dependencies": {
     "axios": "^0.15.3",
+    "electron": "^1.4.15",
     "font-awesome": "^4.6.3",
     "foundation-apps": "^1.2.0",
     "react": "^15.2.0",
