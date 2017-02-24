@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack -d --watch",
     "build": "webpack -p",
+    "serve": "./node_modules/.bin/webpack-dev-server",
     "test:lint": "eslint . --ext .js --ext .jsx --cache"
   },
   "engines": {
@@ -29,7 +30,8 @@
     "redux-form": "^6.5.0",
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "webpack-dev-server": "^2.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",

@@ -17,7 +17,7 @@ const config = {
 
     // This is the equivalent of webpack --inline. Without it, no HMR nor auto-reload
     // Ignored if webpack-dev-server is not used, apparently
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:8080',
 
     // Tells webpack to enable HMR only when utilizing webpack-dev-server
     // If 'only-' is omitted, HMR is enabled even on the backend site.
@@ -124,7 +124,7 @@ const config = {
   ],
   devServer: {
     host: 'localhost',
-    port: 3000,
+    port: 8080,
     contentBase: BUILD_DIR,
     historyApiFallback: true,
     hot: true,
