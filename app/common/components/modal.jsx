@@ -27,7 +27,7 @@ class Modal extends React.Component {
       modalMode: this.props.modalMode,
       closeOnBackgroundMode: this.props.closeOnBackgroundMode,
       closeButtonMode: this.props.closeButtonMode,
-    };
+    }
   }
 
   componentDidMount() {

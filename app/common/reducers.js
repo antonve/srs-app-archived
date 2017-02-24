@@ -10,4 +10,4 @@ const rootReducer = combineReducers({
   routing: routerReducer,
 })
 
-export default rootReducer;
+export default rootReducer

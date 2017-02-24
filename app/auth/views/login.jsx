@@ -8,7 +8,7 @@ function UserLogin() {
         <div className="small-12">Log in</div>
       </div>
       <div className="card-section">
-        <UserLoginFormContainer />
+        <UserLoginFormContainer/>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-let lastId = 0;
+let lastId = 0
 
 export default function (prefix = 'id') {
   lastId += 1

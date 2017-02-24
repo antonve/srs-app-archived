@@ -29,7 +29,7 @@ export default function requireAuthentication(Component) {
     render() {
       return (
         <div>
-          { this.props.currentUser !== null ? <Component {...this.props} /> : null }
+          { this.props.currentUser !== null ? <Component {...this.props}/> : null }
         </div>
       )
     }

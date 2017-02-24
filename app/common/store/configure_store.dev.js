@@ -14,7 +14,7 @@ function ConfigureStore(initialState) {
 
   const store = finalCreateStore(reducer, initialState)
 
-  return store;
+  return store
 }
 
 export default ConfigureStore

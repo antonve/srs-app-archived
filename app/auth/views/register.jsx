@@ -8,11 +8,11 @@ function UserRegister() {
         <div className="small-3">Register</div>
       </div>
       <div className="card-section">
-        <UserRegisterFormContainer />
+        <UserRegisterFormContainer/>
       </div>
     </div>
   )
 }
 
 
-export default UserRegister;
+export default UserRegister

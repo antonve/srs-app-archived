@@ -12,7 +12,7 @@ const renderApp = Component =>
     <AppContainer>
       <Component/>
     </AppContainer>,
-    appElement
+    appElement,
   )
 
 renderApp(App)
