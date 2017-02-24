@@ -9,6 +9,7 @@
     "build": "webpack -p",
     "test:lint": "eslint . --ext .js --ext .jsx --cache"
   },
+  "engines": { "node": ">=6.1.0" },
   "author": "antonve",
   "license": "UNLICENSED",
   "dependencies": {
