@@ -1,7 +1,7 @@
 
-const heroSchema = {
-  title: 'hero schema',
-  description: 'describes a simple hero',
+const schema = {
+  title: 'deck schema',
+  description: 'describes a simple deck',
   type: 'object',
   properties: {
     name: {
@@ -15,4 +15,4 @@ const heroSchema = {
   required: ['color'],
 }
 
-export default heroSchema
+export default schema

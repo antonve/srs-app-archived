@@ -40,7 +40,7 @@ function createWindow() {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow()
-  createWindow()
+  console.log(app.getPath('appData'))
 })
 
 // Quit when all windows are closed.

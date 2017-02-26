@@ -22,7 +22,7 @@ class AppLayout extends React.Component {
   render() {
     return (
       <div className="vertical grid-block">
-        <Header />
+        <Header/>
         <div className="grid-block content">
           {this.props.children}
         </div>
