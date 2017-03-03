@@ -1,25 +1,19 @@
 import React, { Component } from 'react'
-import DeckItem from './DeckItem'
+import DeckItem from './../components/DeckItem'
 import getDatabase from '../../data'
 
-import './hello.scss'
+import './../styles/decks_overview.scss'
 
-class HelloWorld extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      decks: [],
-      name: '',
-      color: '',
-    }
-    this.addDeck = this.addDeck.bind(this)
-    this.handleNameChange = this.handleNameChange.bind(this)
-    this.handleColorChange = this.handleColorChange.bind(this)
-    this.handleKeyPress = this.handleKeyPress.bind(this)
-    this.viewDeck = this.viewDeck.bind(this)
+class DecksOverviewContainer extends Component {
+  state = {
+    decks: [],
+    name: '',
+    color: '',
   }
+
   componentDidMount() {
     const self = this
+
     getDatabase('deck').then((col) => {
       self.col = col
       col.query().sort({ name: 1 }).$.subscribe((decks) => {
@@ -30,33 +24,40 @@ class HelloWorld extends Component {
       })
     })
   }
+
   addDeck() {
     const { name, color } = this.state
+
     if (name && color) {
       this.col.insert({ name, color })
       this.setState({ name: '', color: '' })
     }
   }
-  handleNameChange(event) {
+
+  handleNameChange = (event) => {
     this.setState({
       name: event.target.value,
     })
   }
-  handleColorChange(event) {
+
+  handleColorChange = (event) => {
     this.setState({
       color: event.target.value,
     })
   }
-  handleKeyPress(event) {
+
+  handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       this.addDeck()
     }
   }
-  viewDeck(deck) {
+
+  viewDeck = (deck) => {
     this.setState({
       color: deck.color,
     })
   }
+
   render() {
     return (
       <div>
@@ -106,4 +107,4 @@ class HelloWorld extends Component {
   }
 }
 
-export default HelloWorld
+export default DecksOverviewContainer
