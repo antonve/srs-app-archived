@@ -11,7 +11,7 @@ const BrowserWindow = electron.BrowserWindow
 const windows = []
 function createWindow() {
   // Create the browser window.
-  const width = 600
+  const width = 1000
   const height = 800
   let w = new BrowserWindow({ width, height })
 
@@ -22,9 +22,6 @@ function createWindow() {
     slashes: true,
   }))
 
-  const x = windows.length * width
-  const y = 0
-  w.setPosition(x, y)
   windows.push(w)
 
   // Emitted when the window is closed.

@@ -3,7 +3,7 @@ import DevStore from './configure_store.dev'
 
 let currentConfigureStore
 
-if (process.env.NODE_ENV === 'production' || (location && location.hostname !== 'localhost')) {
+if (process.env.NODE_ENV === 'production') {
   currentConfigureStore = ProdStore
 } else {
   currentConfigureStore = DevStore
