@@ -1,5 +1,5 @@
 import React from 'react'
-import UserRegisterFormContainer from '../components/register'
+import UserRegisterFormContainer from '~/auth/components/register'
 
 function UserRegister() {
   return (

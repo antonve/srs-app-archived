@@ -1,5 +1,5 @@
 import React from 'react'
-import UserLoginFormContainer from '../components/login'
+import UserLoginFormContainer from '~/auth/components/login'
 
 function UserLogin() {
   return (

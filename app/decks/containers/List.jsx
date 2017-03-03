@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import List from './../components/List'
+import List from '~/decks/components/List'
 
 class ListContainer extends Component {
   static propTypes = {

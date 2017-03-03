@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
-import authActions from '../actions'
+import authActions from '~/auth/actions'
 
 class AuthLogin extends Component {
   static propTypes = {

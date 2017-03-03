@@ -37,6 +37,7 @@ const config = {
     modules: ['node_modules'],
     alias: {
       store: path.resolve(__dirname, 'app/store'),
+      '~': path.resolve(__dirname, 'app'),
     },
   },
   module: {

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import uniqueId from '../../common/utils/unique_id'
+import uniqueId from '~/common/utils/unique_id'
 
 export const MODAL_SHOW = 'SHOW'
 export const MODAL_HIDE = 'HIDE'

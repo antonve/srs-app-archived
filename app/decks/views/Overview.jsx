@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ListContainer from './../containers/List'
+import ListContainer from '~/decks/containers/List'
 
 function Overview() {
   return (
