@@ -1,45 +1,16 @@
-# Compiled Object files, Static and Dynamic libs (Shared Objects)
-*.o
-*.a
-*.so
-
 # IDE files
 /.idea
 /.vscode
 
-# Folders
-_obj
-_test
-
-# Architecture specific extensions/prefixes
-*.[568vq]
-[568vq].out
-
-*.cgo1.go
-*.cgo2.c
-_cgo_defun.c
-_cgo_gotypes.go
-_cgo_export.*
-
-_testmain.go
-
-*.exe
-*.test
-*.prof
-
 # Frontend
-client/node_modules
-client/npm-debug.log
-client/yarn-error.log
+node_modules
+npm-debug.log
+yarn-error.log
 
-client/web/css/*
-client/web/js/*
-client/web/fonts/*
+web/css/*
+web/js/*
+web/fonts/*
 
-client/.eslintcache
+.eslintcache
 
 # Custom
-error.log
-config/*.yml
-vendor/*
-srs-project

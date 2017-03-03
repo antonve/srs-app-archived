@@ -1,20 +1,3 @@
 machine:
-  environment:
-    IMPORT_PATH: "/home/ubuntu/.go_workspace/src/github.com/srs-project"
-    APP_PATH: "$IMPORT_PATH/app"
-    CONFIG_FILE_PATH: "$APP_PATH/config"
-
-dependencies:
-  override:
-    - sudo add-apt-repository ppa:masterminds/glide -y
-    - sudo apt-get update
-    - sudo apt-get install glide -y
-
-test:
-  pre:
-    - mkdir -p "$IMPORT_PATH"
-    - ln -sf "$(pwd)" "$APP_PATH"
-    - cp "$APP_PATH/config/test.yml.ci" "$APP_PATH/config/test.yml"
-    - cd "$APP_PATH" && glide install
-  override:
-    - cd "$APP_PATH" && go test -cover $(glide nv)
+  node:
+    version: 6.1.0
