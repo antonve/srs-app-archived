@@ -36,7 +36,7 @@ const config = {
     extensions: ['.js', '.jsx', '.scss'],
     modules: ['node_modules'],
     alias: {
-      store: path(__dirname, 'app/store'),
+      store: path.resolve(__dirname, 'app/store'),
     },
   },
   module: {
