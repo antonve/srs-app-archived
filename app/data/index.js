@@ -1,5 +1,5 @@
 import * as RxDB from 'rxdb'
-import deckSchema from '~/data/schemas/deckSchema'
+import deckSchema from '~/data/schemas/deck'
 
 RxDB.plugin(require('pouchdb-adapter-websql'))
 RxDB.plugin(require('pouchdb-replication'))  // enable syncing

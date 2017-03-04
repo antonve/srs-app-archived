@@ -21,6 +21,7 @@
     "electron": "^1.4.15",
     "font-awesome": "^4.6.3",
     "foundation-apps": "^1.2.0",
+    "immutable": "^3.8.1",
     "pouchdb-adapter-http": "^6.1.2",
     "pouchdb-adapter-websql": "^6.1.2",
     "pouchdb-replication": "^6.1.2",
