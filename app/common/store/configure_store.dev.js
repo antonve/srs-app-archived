@@ -14,6 +14,10 @@ function ConfigureStore(initialState) {
 
   const store = finalCreateStore(reducer, initialState)
 
+  if (module.hot) {
+    module.hot.accept('~/common/reducers', () => store.replaceReducer(reducer))
+  }
+
   return store
 }
 
