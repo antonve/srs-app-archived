@@ -2,8 +2,8 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import configureStore from 'store/configure_store'
 import routes from './common/routes'
-import configureStore from './common/store/configure_store'
 import DevTools from './common/containers/DevTools'
 
 const store = configureStore()
