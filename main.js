@@ -13,14 +13,20 @@ function createWindow() {
   // Create the browser window.
   const width = 1000
   const height = 800
-  let w = new BrowserWindow({ width, height })
-
-  // and load the index.html of the app.
-  w.loadURL(url.format({
+  const options = {
     pathname: path.join(__dirname, 'web', 'index.html'),
     protocol: 'file:',
     slashes: true,
-  }))
+  }
+  let w = new BrowserWindow({ width, height })
+
+  if (process.env.NODE_ENV === 'development') {
+    options.pathname = 'localhost:8080/index.html'
+    options.protocol = 'http:'
+  }
+
+  // and load the index.html of the app.
+  w.loadURL(url.format(options))
 
   windows.push(w)
 

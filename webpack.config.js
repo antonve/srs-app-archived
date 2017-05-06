@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const DefinePlugin = webpack.DefinePlugin
 
 const APP_DIR = path.resolve(__dirname, 'app')
 const BUILD_DIR = path.resolve(__dirname, 'web')
@@ -35,6 +36,10 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
     modules: ['node_modules'],
+    alias: {
+      store: path.resolve(__dirname, 'app/common/store'),
+      '~': path.resolve(__dirname, 'app'),
+    },
   },
   module: {
     rules: [
@@ -108,9 +113,14 @@ const config = {
     ],
   },
   plugins: [
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    }),
+
     new ExtractTextPlugin({
       filename: 'css/bundle.css',
     }),
+
      // Enable HMR globally
     new webpack.HotModuleReplacementPlugin(),
 

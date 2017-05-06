@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import uniqueId from '../utils/unique_id'
+import uniqueId from '~/common/utils/unique_id'
 
 // Field component
 export const renderField = ({ input, label, type, meta: { touched, error } }) => {

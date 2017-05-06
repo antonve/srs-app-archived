@@ -1,4 +1,3 @@
-
 const schema = {
   title: 'deck schema',
   description: 'describes a simple deck',
@@ -8,11 +7,14 @@ const schema = {
       type: 'string',
       primary: true,
     },
-    color: {
+    description: {
       type: 'string',
     },
+    weight: {
+      type: 'integer',
+    },
   },
-  required: ['color'],
+  required: ['name', 'weight'],
 }
 
 export default schema

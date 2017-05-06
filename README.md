@@ -4,14 +4,8 @@ srs-project
 Setup
 -----
 
-### Run dev server
+### Development
 
 ```
-npm run serve
-```
-
-### Run app
-
-```
-npm start
+npm run dev
 ```
