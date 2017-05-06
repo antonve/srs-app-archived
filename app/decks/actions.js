@@ -1,3 +1,5 @@
+import { List } from 'immutable'
+import { Deck } from '~/decks/models/Deck'
 import getDatabase from '~/data'
 
 // Decks list
@@ -17,7 +19,13 @@ const actions = {
           return
         }
 
-        dispatch({ type: FETCH_DECKS_SUCCESS, payload: decks })
+        let collection = List()
+        decks.each(deck => (
+          collection = collection.push(new Deck(deck))
+        ))
+        debugger
+
+        dispatch({ type: FETCH_DECKS_SUCCESS, payload: collection })
       })
     })
   },
