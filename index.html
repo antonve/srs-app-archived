@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SRS Project</title>
+  </head>
+  <body>
+    <pre>
+      Node.js <script>document.write(process.versions.node)</script>
+      Chromium <script>document.write(process.versions.chrome)</script>
+      Electron <script>document.write(process.versions.electron)</script>
+    </pre>
+  </body>
+
+  <script>
+    require('./dist/renderer.js')
+  </script>
+</html>
