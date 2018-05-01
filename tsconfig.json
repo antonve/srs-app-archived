@@ -8,6 +8,7 @@
     "jsx": "react",
     "outDir": "dist",
     "baseUrl": ".",
+    "sourceMap": true,
     "paths": {
       "*": ["node_modules/*"]
     }

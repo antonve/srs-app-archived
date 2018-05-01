@@ -14,16 +14,15 @@ module.exports = merge.smart(baseConfig, {
         include: [path.resolve(__dirname, "src")],
         exclude: [path.resolve(__dirname, "src", "main.ts")],
         use: [
-          "awesome-typescript-loader",
           {
-            loader: "babel-loader",
+            loader: "awesome-typescript-loader",
             options: {
-              plugins: [
-                "@babel/plugin-syntax-typescript",
-                "@babel/plugin-syntax-decorators",
-                "@babel/plugin-syntax-jsx",
-                "react-hot-loader/babel",
-              ],
+              useBabel: true,
+              babelCore: "@babel/core",
+              babelOptions: {
+                babelrc: false,
+                plugins: ["react-hot-loader/babel", "transform-class-properties"],
+              },
             },
           },
         ],
