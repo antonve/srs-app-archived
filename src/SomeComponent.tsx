@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 export interface SomeComponentProps {
   message?: string
@@ -36,7 +36,7 @@ export class SomeComponent extends React.Component<SomeComponentProps, SomeCompo
   render() {
     return (
       <>
-        <p>This is SomeComponent, and it's displaying {this.props.message || "propMessageNotFound"}</p>
+        <p>This is SomeComponent, and it's displaying {this.props.message || 'propMessageNotFound'}</p>
         <p>The current timer value is: {this.state.count}</p>
       </>
     )

@@ -65,6 +65,7 @@
     "*.{js,ts,tsx}": [
       "tslint --fix",
       "prettier --write",
+      "tslint -c tslint.json -p tsconfig.json ",
       "git add"
     ]
   }
