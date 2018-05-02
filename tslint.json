@@ -1,16 +1,12 @@
 {
   "extends": "tslint-config-prettier",
   "rules": {
-    "max-line-length": {
-      "options": [
-        120
-      ]
-    },
+    "max-line-length": [true, 120],
     "new-parens": true,
     "no-arg": true,
     "no-bitwise": true,
     "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": false,
+    "no-consecutive-blank-lines": [false],
     "no-empty": true,
     "no-duplicate-imports": false,
     "quotemark": [true, "single", "jsx-double", "avoid-escape"],
@@ -18,10 +14,6 @@
     "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
   },
   "jsRules": {
-    "max-line-length": {
-      "options": [
-        120
-      ]
-    }
+    "max-line-length": [true, 120]
   }
 }
