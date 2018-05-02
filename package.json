@@ -36,6 +36,7 @@
     "@babel/preset-env": "^7.0.0-beta.46",
     "@babel/preset-react": "^7.0.0-beta.46",
     "@types/html-webpack-plugin": "^2.30.3",
+    "@types/jest": "^22.2.3",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "@types/react-hot-loader": "^4.1.0",
@@ -56,6 +57,7 @@
     "prop-types": "^15.6.1",
     "react-hot-loader": "^4.1.2",
     "react-test-renderer": "^16.3.2",
+    "ts-jest": "^22.4.4",
     "ts-node": "^6.0.2",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.12.0",
@@ -64,6 +66,17 @@
     "webpack-cli": "^2.1.2",
     "webpack-dev-server": "^3.1.3",
     "webpack-merge": "^4.1.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testRegex": "\\.spec\\.(jsx?|tsx?)$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
