@@ -1,10 +1,10 @@
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
+import * as path from 'path'
+import * as webpack from 'webpack'
+import * as merge from 'webpack-merge'
 
-const baseConfig = require('./webpack.config.base')
+import baseConfig from './webpack.config.base'
 
-module.exports = merge.smart(baseConfig, {
+const config = merge.smart(baseConfig, {
   target: 'electron-main',
   entry: {
     main: './src/main.ts',
@@ -24,3 +24,5 @@ module.exports = merge.smart(baseConfig, {
     }),
   ],
 })
+
+export default config // tslint:disable-line

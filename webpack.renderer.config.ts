@@ -1,11 +1,11 @@
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import * as path from 'path'
+import * as webpack from 'webpack'
+import * as merge from 'webpack-merge'
+import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const baseConfig = require('./webpack.config.base')
+import baseConfig from './webpack.config.base'
 
-module.exports = merge.smart(baseConfig, {
+const config = merge.smart(baseConfig, {
   target: 'electron-renderer',
   entry: {
     app: './src/renderer.tsx',
@@ -29,3 +29,5 @@ module.exports = merge.smart(baseConfig, {
     }),
   ],
 })
+
+export default config // tslint:disable-line

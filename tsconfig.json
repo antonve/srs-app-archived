@@ -9,6 +9,7 @@
     "outDir": "dist",
     "baseUrl": ".",
     "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "*": ["node_modules/*"]
     }
