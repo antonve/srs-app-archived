@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-        at: ~/src
+          at: ~/src
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
