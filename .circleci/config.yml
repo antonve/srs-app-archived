@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/src
     steps:
       - checkout
-      - attach_workspace
+      - attach_workspace:
         at: ~/circleci-deployment
       - restore_cache:
           name: Restore Yarn Package Cache
