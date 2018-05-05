@@ -1,6 +1,8 @@
+import { ViewStates } from '../cards/CardRenderer'
+
 export interface Card {
   deckID: number
   cardTypeID: number
-  fields: { [field: string]: any }
+  fields: { [K in ViewStates]: any }
   tags: Array<string>
 }
