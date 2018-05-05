@@ -25,4 +25,4 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
-      - run: yarn test
+      - run: yarn test-ci
