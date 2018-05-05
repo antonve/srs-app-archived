@@ -15,7 +15,12 @@ test('Review renders card content', () => {
     front: 'front of card',
     back: 'back of card',
   }
-  const card = new Card(1, 1, fields, [])
+  const card = {
+    deckID: 1,
+    cardType: 1,
+    tags: [],
+    fields,
+  }
 
   const component = create(<Review card={card} />)
   let tree = component.toJSON()

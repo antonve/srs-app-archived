@@ -6,12 +6,12 @@ export enum ViewStates {
   Back,
 }
 
-interface ICardRendererProps {
+interface CardRendererProps {
   card: Card
   viewState: ViewStates
 }
 
-export class CardRenderer extends React.Component<ICardRendererProps, object> {
+export class CardRenderer extends React.Component<CardRendererProps, object> {
   render() {
     switch (this.props.viewState) {
       case ViewStates.Front:
