@@ -16,7 +16,7 @@ test('Review renders card content', () => {
     front: 'front of card',
     back: 'back of card',
   }
-  const card = {
+  const card: Card = {
     deckID: 1,
     cardTypeID: 1,
     tags: [],
@@ -31,7 +31,5 @@ test('Review renders card content', () => {
   let tree = component.toJSON()
 
   expect(tree).not.toBe('Nothing to review.')
-
-  expect(tree[0]).toEqual(expect.stringContaining(fields.front))
-  expect(tree[0]).not.toEqual(expect.stringContaining(fields.back))
+  expect(tree).toMatchSnapshot()
 })
