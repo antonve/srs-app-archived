@@ -1,20 +1,17 @@
 import * as React from 'react'
-import { Card } from 'data/Card'
+import { Card } from '../data/Card'
+import { CardRenderer, ViewStates } from '../cards/CardRenderer'
 
 export interface IReviewProps {
-  card: Card | null
+  card?: Card
 }
 
-export class Review extends React.Component<object, object> {
-  constructor(props: IReviewProps) {
-    super(props)
-  }
-
+export class Review extends React.Component<IReviewProps, object> {
   render() {
     if (!this.props.card) {
       return <>Nothing to review.</>
     }
 
-    return <>Card.</>
+    return <CardRenderer card={this.props.card} viewState={ViewStates.Front} />
   }
 }

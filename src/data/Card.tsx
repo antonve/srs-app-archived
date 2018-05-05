@@ -1,10 +1,10 @@
-class Card {
-  deckID: int
-  cardType: int
-  fields: Object
-  tags: Array
+export class Card {
+  deckID: number
+  cardType: number
+  fields: { [field: string]: any }
+  tags: Array<string>
 
-  constructor(deckID: int, cardType: int, fields: Object, tags: Array) {
+  constructor(deckID: number, cardType: number, fields: { [field: string]: any }, tags: Array<string>) {
     this.deckID = deckID
     this.cardType = cardType
     this.fields = fields
