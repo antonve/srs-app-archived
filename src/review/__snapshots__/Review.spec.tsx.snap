@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review renders card content 1`] = `
+Array [
+  "front of card",
+  "reveal card",
+]
+`;
