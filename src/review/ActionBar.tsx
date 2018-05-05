@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReviewState } from 'Review'
+import { ReviewState } from './Review'
 import { ViewStates } from '../cards/CardRenderer'
 
 export interface ActionBarProps {
