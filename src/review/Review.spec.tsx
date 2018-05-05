@@ -5,5 +5,5 @@ import { create } from 'react-test-renderer'
 test('Review shows empty state', () => {
   const component = create(<Review />)
   let tree = component.toJSON()
-  expect(tree).toBe('Review component')
+  expect(tree).toBe('Nothing to review.')
 })

@@ -2,6 +2,10 @@ import * as React from 'react'
 
 export class Review extends React.Component<object, object> {
   render() {
-    return <>Review component</>
+    if (!this.props.card) {
+      return <>Nothing to review.</>
+    }
+
+    return <>Card.</>
   }
 }
