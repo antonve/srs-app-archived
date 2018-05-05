@@ -18,7 +18,7 @@ test('Review renders card content', () => {
   }
   const card = {
     deckID: 1,
-    cardType: 1,
+    cardTypeID: 1,
     tags: [],
     fields,
   }
