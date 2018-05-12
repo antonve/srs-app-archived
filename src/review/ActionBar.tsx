@@ -6,7 +6,7 @@ export interface ActionBarProps {
   reviewState: ReviewState
 }
 
-export class ActionBar extends React.Component<ActionBarProps, object> {
+export class ActionBar extends React.Component<ActionBarProps, {}> {
   renderFrontActions = () => {
     return 'reveal card'
   }
