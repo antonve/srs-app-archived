@@ -11,3 +11,11 @@ test('ActionBar shows `reveal state` button on init', () => {
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
+
+test('ActionBar shows grading buttons on reveal', () => {
+  const state = { time: 0, viewState: ViewStates.Back }
+  const component = create(<ActionBar reviewState={state} />)
+
+  let tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
+})

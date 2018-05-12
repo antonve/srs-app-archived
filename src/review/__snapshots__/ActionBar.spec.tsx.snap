@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ActionBar shows \`reveal state\` button on init 1`] = `"reveal card"`;
+
+exports[`ActionBar shows grading buttons on reveal 1`] = `
+Array [
+  <span>
+    Wrong
+  </span>,
+  <span>
+    Correct
+  </span>,
+]
+`;

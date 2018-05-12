@@ -12,7 +12,12 @@ export class ActionBar extends React.Component<ActionBarProps, object> {
   }
 
   renderBackActions = () => {
-    return 'action buttons when card is revealed'
+    return (
+      <>
+        <span>Wrong</span>
+        <span>Correct</span>
+      </>
+    )
   }
 
   render() {
