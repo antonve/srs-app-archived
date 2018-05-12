@@ -1,2 +1,2 @@
-export { ColorPalette } from 'src/ui/ColorPalette'
+export { theme } from 'src/ui/Theme'
 export { Button } from 'src/ui/Button'

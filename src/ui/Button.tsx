@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { ColorPalette } from 'src/ui/components'
+import { theme } from 'src/ui/components'
 
 interface ButtonProps {
   label: string
@@ -9,8 +9,8 @@ interface ButtonProps {
 
 const StyledButton = styled.span`
   padding: 15px;
-  color: ${ColorPalette.light};
-  background-color: ${ColorPalette.dark};
+  color: ${theme.colors.light};
+  background-color: ${theme.colors.dark};
 `
 
 export const Button: React.SFC<ButtonProps> = ({ label, onClickHandler }) => {
