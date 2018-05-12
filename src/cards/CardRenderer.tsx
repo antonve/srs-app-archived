@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card } from '../data/Card'
+import { Card } from 'src/data/Card'
 
 export enum ViewState {
   Front = 'front',

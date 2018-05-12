@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { ReviewState } from './Review'
-import { ViewState } from '../cards/CardRenderer'
+import { ReviewState } from 'src/review/Review'
+import { ViewState } from 'src/cards/CardRenderer'
 
 export interface ActionBarProps {
   reviewState: ReviewState
