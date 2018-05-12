@@ -12,7 +12,7 @@ test('Review shows empty state', () => {
 })
 
 describe('Review with proper card data', () => {
-  const subject = () => {
+  const subject = (viewState: ViewStates) => {
     const fields = {
       front: 'front of card',
       back: 'back of card',
@@ -25,19 +25,19 @@ describe('Review with proper card data', () => {
     }
     const state = {
       time: 0,
-      viewState: ViewStates.Front,
+      viewState,
     }
 
     return create(<Review card={card} reviewState={state} />)
   }
 
   it('renders front card content on load', () => {
-    const tree = subject().toJSON()
+    const tree = subject(ViewStates.Front).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('renders back card content on clicking show', () => {
-    const component = subject()
-    const tree = component.toJSON()
+    const tree = subject(ViewStates.Back).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

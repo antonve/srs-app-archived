@@ -21,7 +21,7 @@ export class Review extends React.Component<ReviewProps, object> {
 
     return (
       <>
-        <CardRenderer card={this.props.card} viewState={ViewStates.Front} />
+        <CardRenderer card={this.props.card} viewState={this.props.reviewState.viewState} />
         <ActionBar reviewState={this.props.reviewState} />
       </>
     )

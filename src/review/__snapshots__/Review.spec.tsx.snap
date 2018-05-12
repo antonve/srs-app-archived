@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Review with proper card data renders back card content on clicking show 1`] = `
+Array [
+  "back of card",
+  "action buttons when card is revealed",
+]
+`;
+
 exports[`Review with proper card data renders front card content on load 1`] = `
 Array [
   "front of card",
