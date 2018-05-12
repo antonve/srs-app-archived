@@ -3,7 +3,7 @@ import { create } from 'react-test-renderer'
 
 import { Review } from './Review'
 import { Card } from '../data/Card'
-import { ViewStates } from '../cards/CardRenderer'
+import { ViewState } from '../cards/CardRenderer'
 
 test('Review shows empty state', () => {
   const component = create(<Review />)
@@ -12,7 +12,7 @@ test('Review shows empty state', () => {
 })
 
 describe('Review with proper card data', () => {
-  const subject = (viewState: ViewStates) => {
+  const subject = (viewState: ViewState) => {
     const fields = {
       front: 'front of card',
       back: 'back of card',
@@ -32,12 +32,12 @@ describe('Review with proper card data', () => {
   }
 
   it('renders front card content on load', () => {
-    const tree = subject(ViewStates.Front).toJSON()
+    const tree = subject(ViewState.Front).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('renders back card content on clicking show', () => {
-    const tree = subject(ViewStates.Back).toJSON()
+    const tree = subject(ViewState.Back).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

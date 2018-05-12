@@ -1,23 +1,16 @@
 import * as React from 'react'
 import { Card } from '../data/Card'
 
-export enum ViewStates {
-  Front = 'FRONT',
-  Back = 'BACK',
+export enum ViewState {
+  Front = 'front',
+  Back = 'back',
 }
 
 interface CardRendererProps {
   card: Card
-  viewState: ViewStates
+  viewState: ViewState
 }
 
-export class CardRenderer extends React.Component<CardRendererProps, object> {
-  render() {
-    switch (this.props.viewState) {
-      case ViewStates.Front:
-        return this.props.card.fields.front
-      case ViewStates.Back:
-        return this.props.card.fields.back
-    }
-  }
+export const CardRenderer: React.SFC<CardRendererProps> = ({ card, viewState }) => {
+  return card.fields[viewState]
 }
