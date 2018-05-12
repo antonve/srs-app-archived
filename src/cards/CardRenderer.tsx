@@ -11,10 +11,6 @@ interface CardRendererProps {
   viewState: ViewState
 }
 
-export class CardRenderer extends React.Component<CardRendererProps, object> {
-  render() {
-    const { card, viewState } = this.props
-
-    return card.fields[viewState]
-  }
+export const CardRenderer: React.SFC<CardRendererProps> = ({ card, viewState }) => {
+  return card.fields[viewState]
 }
