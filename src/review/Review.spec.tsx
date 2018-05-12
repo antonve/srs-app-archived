@@ -11,25 +11,33 @@ test('Review shows empty state', () => {
   expect(tree).toBe('Nothing to review.')
 })
 
-test('Review renders card content', () => {
-  const fields = {
-    front: 'front of card',
-    back: 'back of card',
-  }
-  const card: Card = {
-    deckID: 1,
-    cardTypeID: 1,
-    tags: [],
-    fields,
-  }
-  const state = {
-    time: 0,
-    viewState: ViewStates.Front,
+describe('Review with proper card data', () => {
+  const subject = () => {
+    const fields = {
+      front: 'front of card',
+      back: 'back of card',
+    }
+    const card: Card = {
+      deckID: 1,
+      cardTypeID: 1,
+      tags: [],
+      fields,
+    }
+    const state = {
+      time: 0,
+      viewState: ViewStates.Front,
+    }
+
+    return create(<Review card={card} reviewState={state} />)
   }
 
-  const component = create(<Review card={card} reviewState={state} />)
-  let tree = component.toJSON()
+  it('renders front card content on load', () => {
+    const tree = subject().toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 
-  expect(tree).not.toBe('Nothing to review.')
-  expect(tree).toMatchSnapshot()
+  it('renders back card content on clicking show', () => {
+    const component = subject()
+    const tree = component.toJSON()
+  })
 })

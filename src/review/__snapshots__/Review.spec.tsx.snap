@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Review renders card content 1`] = `
+exports[`Review with proper card data renders front card content on load 1`] = `
 Array [
   "front of card",
   "reveal card",
