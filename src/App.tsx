@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button } from 'ui/components'
+import { Button } from 'src/ui/components'
 
 export class App extends React.Component<{}, {}> {
   render() {

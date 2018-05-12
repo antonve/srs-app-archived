@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { ColorPalette } from 'ui/components'
+import { ColorPalette } from 'src/ui/components'
 
 interface ButtonProps {
   label: string
