@@ -76,6 +76,9 @@
       "tsx",
       "js"
     ],
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/$1"
+    },
     "testRegex": "\\.spec\\.(jsx?|tsx?)$",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
