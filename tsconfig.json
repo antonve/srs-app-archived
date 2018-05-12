@@ -11,11 +11,15 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["node_modules/*"],
+      "src/*": ["src/*"]
     }
   },
   "include": [
     "src/**/*",
     "./webpack*"
+  ],
+  "exclude": [
+    "**/*.spec.tsx"
   ]
 }
