@@ -15,14 +15,16 @@ export interface ReviewProps {
 
 export class Review extends React.Component<ReviewProps, {}> {
   render() {
-    if (!this.props.card) {
+    const { card, reviewState } = this.props
+
+    if (!card) {
       return <>Nothing to review.</>
     }
 
     return (
       <>
-        <CardRenderer card={this.props.card} viewState={this.props.reviewState.viewState} />
-        <ActionBar reviewState={this.props.reviewState} />
+        <CardRenderer card={card} viewState={reviewState.viewState} />
+        <ActionBar reviewState={reviewState} />
       </>
     )
   }
