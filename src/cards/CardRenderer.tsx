@@ -15,9 +15,9 @@ export class CardRenderer extends React.Component<CardRendererProps, object> {
   render() {
     switch (this.props.viewState) {
       case ViewStates.Front:
-        return this.props.card.fields[ViewStates.Front]
+        return this.props.card.fields.front
       case ViewStates.Back:
-        return this.props.card.fields[ViewStates.Back]
+        return this.props.card.fields.back
     }
   }
 }
