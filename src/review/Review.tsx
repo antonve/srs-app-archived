@@ -13,7 +13,7 @@ export interface ReviewProps {
   reviewState?: ReviewState
 }
 
-export class Review extends React.Component<ReviewProps, object> {
+export class Review extends React.Component<ReviewProps, {}> {
   render() {
     if (!this.props.card) {
       return <>Nothing to review.</>
