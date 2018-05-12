@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { SomeComponent } from './SomeComponent'
+import { Button } from 'ui/components'
 
 export class App extends React.Component<{}, {}> {
   render() {
-    return <SomeComponent message={'Hey there from App!'} />
+    return <Button label={'Hey there from App!'} />
   }
 }

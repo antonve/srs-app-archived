@@ -1,1 +1,2 @@
-export { ColorPalette } from 'src/ui/ColorPalette'
+export { ColorPalette } from 'ui/ColorPalette'
+export { Button } from 'ui/Button'
