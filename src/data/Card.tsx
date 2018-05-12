@@ -1,8 +1,8 @@
-import { ViewStates } from '../cards/CardRenderer'
+import { ViewState } from '../cards/CardRenderer'
 
 export interface Card {
   deckID: number
   cardTypeID: number
-  fields: { front: any; back: any }
+  fields: { [K in ViewState]: React.ReactNode }
   tags: Array<string>
 }

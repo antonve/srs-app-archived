@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ReviewState } from './Review'
-import { ViewStates } from '../cards/CardRenderer'
+import { ViewState } from '../cards/CardRenderer'
 
 export interface ActionBarProps {
   reviewState: ReviewState
@@ -17,9 +17,9 @@ export class ActionBar extends React.Component<ActionBarProps, object> {
 
   render() {
     switch (this.props.reviewState.viewState) {
-      case ViewStates.Front:
+      case ViewState.Front:
         return this.renderFrontActions()
-      case ViewStates.Back:
+      case ViewState.Back:
         return this.renderBackActions()
     }
   }

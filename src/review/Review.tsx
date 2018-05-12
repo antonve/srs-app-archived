@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Card } from '../data/Card'
-import { CardRenderer, ViewStates } from '../cards/CardRenderer'
+import { CardRenderer, ViewState } from '../cards/CardRenderer'
 import { ActionBar } from './ActionBar'
 
 export interface ReviewState {
-  viewState: ViewStates
+  viewState: ViewState
   time: number
 }
 
