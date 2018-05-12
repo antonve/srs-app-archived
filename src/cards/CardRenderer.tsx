@@ -12,5 +12,5 @@ interface CardRendererProps {
 }
 
 export const CardRenderer: React.SFC<CardRendererProps> = ({ card, viewState }) => {
-  return <>card.fields[viewState]</>
+  return <>{card.fields[viewState]}</>
 }
