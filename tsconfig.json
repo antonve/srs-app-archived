@@ -18,5 +18,8 @@
   "include": [
     "src/**/*",
     "./webpack*"
+  ],
+  "exclude": [
+    "**/*.spec.tsx"
   ]
 }
