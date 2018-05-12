@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { rgba } from 'polished'
 import { theme } from 'src/ui/components'
 
 interface ButtonProps {
@@ -7,10 +8,15 @@ interface ButtonProps {
   onClickHandler?: () => void
 }
 
-const StyledButton = styled.span`
+const StyledButton = styled.button`
   padding: 15px;
   color: ${theme.colors.light};
   background-color: ${theme.colors.dark};
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${rgba(theme.colors.dark, 0.7)};
+  }
 `
 
 export const Button: React.SFC<ButtonProps> = ({ label, onClickHandler }) => {
