@@ -3,7 +3,12 @@
 exports[`Review with proper card data renders back card content on clicking show 1`] = `
 Array [
   "back of card",
-  "action buttons when card is revealed",
+  <span>
+    Wrong
+  </span>,
+  <span>
+    Correct
+  </span>,
 ]
 `;
 
