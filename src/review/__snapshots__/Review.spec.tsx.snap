@@ -3,18 +3,32 @@
 exports[`Review with proper card data renders back card content on clicking show 1`] = `
 Array [
   "back of card",
-  <span>
+  <button
+    className="sc-bdVaJa boUuIV"
+    disabled={undefined}
+    onClick={undefined}
+  >
     Wrong
-  </span>,
-  <span>
+  </button>,
+  <button
+    className="sc-bdVaJa boUuIV"
+    disabled={undefined}
+    onClick={undefined}
+  >
     Correct
-  </span>,
+  </button>,
 ]
 `;
 
 exports[`Review with proper card data renders front card content on load 1`] = `
 Array [
   "front of card",
-  "reveal card",
+  <button
+    className="sc-bdVaJa boUuIV"
+    disabled={undefined}
+    onClick={undefined}
+  >
+    Reveal card
+  </button>,
 ]
 `;
