@@ -5,11 +5,13 @@ Array [
   "back of card",
   <button
     className="sc-bdVaJa boUuIV"
+    onClick={[Function]}
   >
     Wrong
   </button>,
   <button
     className="sc-bdVaJa boUuIV"
+    onClick={[Function]}
   >
     Correct
   </button>,

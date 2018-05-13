@@ -13,11 +13,13 @@ exports[`ActionBar shows grading buttons on reveal 1`] = `
 Array [
   <button
     className="sc-bdVaJa boUuIV"
+    onClick={[Function]}
   >
     Wrong
   </button>,
   <button
     className="sc-bdVaJa boUuIV"
+    onClick={[Function]}
   >
     Correct
   </button>,
