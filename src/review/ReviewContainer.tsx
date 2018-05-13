@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card, ViewState } from 'src/model/interfaces'
+import { Card, ViewState, Grade } from 'src/model/interfaces'
 import { Review } from 'src/review/Review'
 
 export interface ReviewState {
@@ -39,9 +39,21 @@ export class ReviewContainer extends React.Component<{}, {}> {
     })
   }
 
+  grade = (grade: Grade) => {
+    this.setState({
+      card: null,
+      reviewState: {
+        viewState: ViewState.Front,
+        time: 0,
+      },
+    })
+  }
+
   render() {
     const { card, reviewState } = this.state
 
-    return <Review card={card} viewState={reviewState.viewState} revealHandler={this.reveal} />
+    return (
+      <Review card={card} viewState={reviewState.viewState} revealHandler={this.reveal} gradeHandler={this.grade} />
+    )
   }
 }

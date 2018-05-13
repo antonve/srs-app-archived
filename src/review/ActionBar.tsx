@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { ViewState } from 'src/model/interfaces'
+import { ViewState, Grade } from 'src/model/interfaces'
 import { Button } from 'src/ui/components'
 
 export interface ActionBarProps {
   viewState: ViewState
   revealHandler: () => void
+  gradeHandler: (grade: Grade) => void
 }
 
 export class ActionBar extends React.Component<ActionBarProps, {}> {
@@ -13,10 +14,12 @@ export class ActionBar extends React.Component<ActionBarProps, {}> {
   }
 
   renderBackActions = () => {
+    const { gradeHandler } = this.props
+
     return (
       <>
-        <Button label="Wrong" />
-        <Button label="Correct" />
+        <Button label="Wrong" onClick={() => gradeHandler(Grade.Wrong)} />
+        <Button label="Correct" onClick={() => gradeHandler(Grade.Correct)} />
       </>
     )
   }
