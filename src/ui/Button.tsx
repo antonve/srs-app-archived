@@ -39,9 +39,5 @@ const StyledButton = styled.button`
 `
 
 export const Button: React.SFC<ButtonProps> = ({ label, onClickHandler }) => {
-  return (
-    <StyledButton disabled onClick={onClickHandler}>
-      {label}
-    </StyledButton>
-  )
+  return <StyledButton onClick={onClickHandler}>{label}</StyledButton>
 }
