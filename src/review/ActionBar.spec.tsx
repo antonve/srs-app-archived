@@ -5,16 +5,14 @@ import { ActionBar } from 'src/review/ActionBar'
 import { ViewState } from 'src/model/interfaces'
 
 test('ActionBar shows `reveal state` button on init', () => {
-  const state = { time: 0, viewState: ViewState.Front }
-  const component = create(<ActionBar reviewState={state} />)
+  const component = create(<ActionBar viewState={ViewState.Front} />)
 
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
 
 test('ActionBar shows grading buttons on reveal', () => {
-  const state = { time: 0, viewState: ViewState.Back }
-  const component = create(<ActionBar reviewState={state} />)
+  const component = create(<ActionBar viewState={ViewState.Back} />)
 
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()

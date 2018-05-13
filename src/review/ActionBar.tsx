@@ -1,15 +1,15 @@
 import * as React from 'react'
-import { ReviewState } from 'src/review/Review'
-import { ViewState } from 'src/cards/CardRenderer'
+import { ViewState } from 'src/model/interfaces'
 import { Button } from 'src/ui/components'
 
 export interface ActionBarProps {
-  reviewState: ReviewState
+  viewState: ViewState
+  revealHandler: () => void
 }
 
 export class ActionBar extends React.Component<ActionBarProps, {}> {
   renderFrontActions = () => {
-    return <Button label="Reveal card" />
+    return <Button label="Reveal card" onClick={this.props.revealHandler} />
   }
 
   renderBackActions = () => {
@@ -22,7 +22,7 @@ export class ActionBar extends React.Component<ActionBarProps, {}> {
   }
 
   render() {
-    switch (this.props.reviewState.viewState) {
+    switch (this.props.viewState) {
       case ViewState.Front:
         return this.renderFrontActions()
       case ViewState.Back:
