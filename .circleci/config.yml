@@ -20,7 +20,9 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-            yarn install
+            yarn global add greenkeeper-lockfile@1
+      - run: yarn install
+      - run: greenkeeper-lockfile-update
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -33,5 +35,12 @@ jobs:
           command: |
             ./cc-test-reporter before-build
             yarn test
+      - run:
+          name: Test Build
+          command: |
+            yarn run build
+      - run: greenkeeper-lockfile-upload
+      - run:
+          name: Update Coverage
             ./cc-test-reporter after-build --exit-code $?
             cat coverage/lcov.info | ./node_modules/.bin/coveralls
