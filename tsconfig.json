@@ -15,11 +15,5 @@
       "src/*": ["src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "./webpack*"
-  ],
-  "exclude": [
-    "**/*.spec.tsx"
-  ]
+  "include": ["src/**/*", "./webpack*"]
 }
