@@ -1,4 +1,4 @@
-import { ViewState } from '../cards/CardRenderer'
+import { ViewState } from 'src/cards/CardRenderer'
 
 export interface Card {
   deckID: number

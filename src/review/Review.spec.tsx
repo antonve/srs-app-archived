@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { create } from 'react-test-renderer'
 
-import { Review } from './Review'
-import { Card } from '../data/Card'
-import { ViewState } from '../cards/CardRenderer'
+import { Review } from 'src/review/Review'
+import { Card } from 'src/data/Card'
+import { ViewState } from 'src/cards/CardRenderer'
 
 test('Review shows empty state', () => {
   const component = create(<Review />)

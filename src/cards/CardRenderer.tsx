@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card } from '../data/Card'
+import { Card } from 'src/data/Card'
 
 export enum ViewState {
   Front = 'front',
@@ -12,5 +12,5 @@ interface CardRendererProps {
 }
 
 export const CardRenderer: React.SFC<CardRendererProps> = ({ card, viewState }) => {
-  return card.fields[viewState]
+  return <>{card.fields[viewState]}</>
 }

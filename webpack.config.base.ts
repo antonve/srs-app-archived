@@ -12,6 +12,9 @@ const config: Configuration = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+    },
   },
   devtool: 'source-map',
   plugins: [],

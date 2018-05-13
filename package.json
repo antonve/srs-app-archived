@@ -25,9 +25,11 @@
   "author": "SRS Project",
   "license": "MIT",
   "dependencies": {
+    "polished": "^1.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-transition-group": "^2.3.1"
+    "react-transition-group": "^2.3.1",
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
@@ -49,7 +51,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "coveralls": "^3.0.1",
     "cross-env": "^5.1.4",
-    "electron": "^1.8.6",
+    "electron": "^2.0.0",
     "electron-compile": "^6.4.2",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
@@ -76,6 +78,9 @@
       "tsx",
       "js"
     ],
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/$1"
+    },
     "testRegex": "\\.spec\\.(jsx?|tsx?)$",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
