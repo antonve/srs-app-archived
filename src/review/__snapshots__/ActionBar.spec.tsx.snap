@@ -3,7 +3,7 @@
 exports[`ActionBar shows \`reveal state\` button on init 1`] = `
 <button
   className="sc-bdVaJa boUuIV"
-  onClick={undefined}
+  onClick={[MockFunction]}
 >
   Reveal card
 </button>

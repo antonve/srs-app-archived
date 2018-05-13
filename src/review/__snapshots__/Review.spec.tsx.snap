@@ -23,7 +23,7 @@ Array [
   "front of card",
   <button
     className="sc-bdVaJa boUuIV"
-    onClick={undefined}
+    onClick={[MockFunction]}
   >
     Reveal card
   </button>,
