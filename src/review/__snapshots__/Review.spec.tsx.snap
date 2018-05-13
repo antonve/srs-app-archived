@@ -5,15 +5,11 @@ Array [
   "back of card",
   <button
     className="sc-bdVaJa boUuIV"
-    disabled={undefined}
-    onClick={undefined}
   >
     Wrong
   </button>,
   <button
     className="sc-bdVaJa boUuIV"
-    disabled={undefined}
-    onClick={undefined}
   >
     Correct
   </button>,
@@ -25,7 +21,6 @@ Array [
   "front of card",
   <button
     className="sc-bdVaJa boUuIV"
-    disabled={undefined}
     onClick={undefined}
   >
     Reveal card

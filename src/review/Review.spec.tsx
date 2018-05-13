@@ -22,12 +22,8 @@ describe('Review with proper card data', () => {
       tags: [],
       fields,
     }
-    const state = {
-      time: 0,
-      viewState,
-    }
 
-    return create(<Review card={card} reviewState={state} />)
+    return create(<Review card={card} viewState={viewState} />)
   }
 
   it('renders front card content on load', () => {

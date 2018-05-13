@@ -3,7 +3,6 @@
 exports[`ActionBar shows \`reveal state\` button on init 1`] = `
 <button
   className="sc-bdVaJa boUuIV"
-  disabled={undefined}
   onClick={undefined}
 >
   Reveal card
@@ -14,15 +13,11 @@ exports[`ActionBar shows grading buttons on reveal 1`] = `
 Array [
   <button
     className="sc-bdVaJa boUuIV"
-    disabled={undefined}
-    onClick={undefined}
   >
     Wrong
   </button>,
   <button
     className="sc-bdVaJa boUuIV"
-    disabled={undefined}
-    onClick={undefined}
   >
     Correct
   </button>,
