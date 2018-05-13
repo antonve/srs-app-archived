@@ -1,10 +1,5 @@
 import * as React from 'react'
-import { Card } from 'src/data/Card'
-
-export enum ViewState {
-  Front = 'front',
-  Back = 'back',
-}
+import { Card, ViewState } from 'src/model/interfaces'
 
 interface CardRendererProps {
   card: Card

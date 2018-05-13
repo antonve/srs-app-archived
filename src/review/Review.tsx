@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Card } from 'src/data/Card'
-import { CardRenderer, ViewState } from 'src/cards/CardRenderer'
+import { Card, ViewState } from 'src/model/interfaces'
+import { CardRenderer } from 'src/cards/CardRenderer'
 import { ActionBar } from 'src/review/ActionBar'
 
 export interface ReviewState {

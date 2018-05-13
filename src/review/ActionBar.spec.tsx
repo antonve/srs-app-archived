@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { create } from 'react-test-renderer'
 
-import { ActionBar } from './ActionBar'
-import { ViewState } from '../cards/CardRenderer'
+import { ActionBar } from 'src/review/ActionBar'
+import { ViewState } from 'src/model/interfaces'
 
 test('ActionBar shows `reveal state` button on init', () => {
   const state = { time: 0, viewState: ViewState.Front }
