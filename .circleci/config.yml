@@ -22,7 +22,7 @@ jobs:
             chmod +x ./cc-test-reporter
             yarn global add greenkeeper-lockfile@1
       - run: yarn install
-      - run: greenkeeper-lockfile-update
+      - run: yarn greenkeeper-lockfile-update
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -39,7 +39,7 @@ jobs:
           name: Test Build
           command: |
             yarn run build
-      - run: greenkeeper-lockfile-upload
+      - run: yarn greenkeeper-lockfile-upload
       - run:
           name: Update Coverage
           command: |
