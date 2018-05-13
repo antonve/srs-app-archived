@@ -12,7 +12,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "test-ci": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -77,6 +78,9 @@
       "tsx",
       "js"
     ],
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/$1"
+    },
     "testRegex": "\\.spec\\.(jsx?|tsx?)$",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
