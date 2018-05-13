@@ -25,7 +25,8 @@ jobs:
           command: |
             echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
             source $BASH_ENV
-            yarn greenkeeper-lockfile-update
+            yarn global add greenkeeper-lockfile@1
+      - run: greenkeeper-lockfile-update
       - run: yarn install
       - save_cache:
           name: Save Yarn Package Cache
@@ -43,7 +44,7 @@ jobs:
           name: Test Build
           command: |
             yarn run build
-      - run: yarn greenkeeper-lockfile-upload
+      - run: greenkeeper-lockfile-upload
       - run:
           name: Update Coverage
           command: |
