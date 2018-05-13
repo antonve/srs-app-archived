@@ -22,7 +22,7 @@ jobs:
             chmod +x ./cc-test-reporter
       - run:
           name: Prepare Dependencies
-          command:
+          command: |
             echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
             source $BASH_ENV
             yarn greenkeeper-lockfile-update
