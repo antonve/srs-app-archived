@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { ReviewState } from 'src/review/Review'
 import { ViewState } from 'src/cards/CardRenderer'
+import { Button } from 'src/ui/components'
 
 export interface ActionBarProps {
   reviewState: ReviewState
@@ -8,14 +9,14 @@ export interface ActionBarProps {
 
 export class ActionBar extends React.Component<ActionBarProps, {}> {
   renderFrontActions = () => {
-    return 'reveal card'
+    return <Button label="Reveal card" />
   }
 
   renderBackActions = () => {
     return (
       <>
-        <span>Wrong</span>
-        <span>Correct</span>
+        <Button label="Wrong" />
+        <Button label="Correct" />
       </>
     )
   }
