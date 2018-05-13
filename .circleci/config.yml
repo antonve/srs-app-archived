@@ -42,5 +42,6 @@ jobs:
       - run: greenkeeper-lockfile-upload
       - run:
           name: Update Coverage
+          command: |
             ./cc-test-reporter after-build --exit-code $?
             cat coverage/lcov.info | ./node_modules/.bin/coveralls
