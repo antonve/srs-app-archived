@@ -24,9 +24,11 @@
   "author": "SRS Project",
   "license": "MIT",
   "dependencies": {
+    "polished": "^1.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-transition-group": "^2.3.1"
+    "react-transition-group": "^2.3.1",
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
