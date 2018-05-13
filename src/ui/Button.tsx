@@ -5,8 +5,6 @@ import { theme } from 'src/ui/components'
 
 interface ButtonProps {
   label: string
-  onClickHandler?: () => void
-  disabled?: boolean
 }
 
 const StyledButton = styled.button`
@@ -39,10 +37,6 @@ const StyledButton = styled.button`
   }
 `
 
-export const Button: React.SFC<ButtonProps> = ({ label, onClickHandler, disabled }) => {
-  return (
-    <StyledButton onClick={onClickHandler} disabled={disabled}>
-      {label}
-    </StyledButton>
-  )
+export const Button: React.SFC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({ label, ref, ...otherProps }) => {
+  return <StyledButton {...otherProps}>{label}</StyledButton>
 }
