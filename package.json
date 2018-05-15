@@ -24,9 +24,12 @@
   "author": "SRS Project",
   "license": "MIT",
   "dependencies": {
+    "pouchdb-adapter-idb": "^6.4.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-transition-group": "^2.3.1"
+    "react-transition-group": "^2.3.1",
+    "rxdb": "^7.6.0",
+    "rxjs": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
@@ -37,6 +40,7 @@
     "@babel/preset-react": "^7.0.0-beta.46",
     "@types/html-webpack-plugin": "^2.30.3",
     "@types/jest": "^22.2.3",
+    "@types/pouchdb-adapter-idb": "^6.1.2",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "@types/react-hot-loader": "^4.1.0",

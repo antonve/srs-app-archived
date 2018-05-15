@@ -20,5 +20,8 @@
   ],
   "exclude": [
     "**/*.spec.tsx"
+  ],
+  "files": [
+    "src/typings/typings.d.ts"
   ]
 }

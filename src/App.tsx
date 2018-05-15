@@ -1,8 +1,14 @@
 import * as React from 'react'
 import { SomeComponent } from './SomeComponent'
+import { DatabaseExample } from './DatabaseExample'
 
 export class App extends React.Component<{}, {}> {
   render() {
-    return <SomeComponent message={'Hey there from App!'} />
+    return (
+      <div>
+        <SomeComponent message={'Hey there from App!'} />
+        <DatabaseExample />
+      </div>
+    )
   }
 }
