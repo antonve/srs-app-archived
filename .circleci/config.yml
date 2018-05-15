@@ -20,7 +20,14 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-            yarn install
+      - run:
+          name: Prepare Dependencies
+          command: |
+            echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
+            source $BASH_ENV
+            yarn global add greenkeeper-lockfile@1
+      - run: greenkeeper-lockfile-update
+      - run: yarn install
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -33,5 +40,13 @@ jobs:
           command: |
             ./cc-test-reporter before-build
             yarn test
+      - run:
+          name: Test Build
+          command: |
+            yarn run build
+      - run: greenkeeper-lockfile-upload
+      - run:
+          name: Update Coverage
+          command: |
             ./cc-test-reporter after-build --exit-code $?
             cat coverage/lcov.info | ./node_modules/.bin/coveralls
