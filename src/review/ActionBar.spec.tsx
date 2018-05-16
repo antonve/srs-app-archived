@@ -41,3 +41,18 @@ test('ActionBar triggers revealHandler after clicking reveal', () => {
   tree.find(Button).simulate('click')
   expect(props.revealHandler).toHaveBeenCalled()
 })
+
+test('ActionBar triggers gradeHandler when clicking grading button', () => {
+  const props = {
+    viewState: ViewState.Back,
+    revealHandler: jest.fn(),
+    gradeHandler: jest.fn(),
+  }
+  const tree = shallow(<ActionBar {...props} />)
+
+  tree
+    .find(Button)
+    .first()
+    .simulate('click')
+  expect(props.gradeHandler).toHaveBeenCalled()
+})
