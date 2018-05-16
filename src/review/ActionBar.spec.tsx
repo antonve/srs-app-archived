@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { create } from 'react-test-renderer'
+import { shallow } from 'enzyme'
 
 import { ActionBar } from 'src/review/ActionBar'
 import { ViewState } from 'src/model/interfaces'
+import { Button } from 'src/ui/components'
 
 test('ActionBar shows `reveal state` button on init', () => {
   const props = {
@@ -26,4 +28,16 @@ test('ActionBar shows grading buttons on reveal', () => {
 
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
+})
+
+test('ActionBar triggers revealHandler after clicking reveal', () => {
+  const props = {
+    viewState: ViewState.Front,
+    revealHandler: jest.fn(),
+    gradeHandler: jest.fn(),
+  }
+  const tree = shallow(<ActionBar {...props} />)
+
+  tree.find(Button).simulate('click')
+  expect(props.revealHandler).toHaveBeenCalled()
 })
