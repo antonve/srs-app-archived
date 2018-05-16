@@ -14,6 +14,13 @@ export interface ReviewProps {
 }
 
 export class Review extends React.Component<ReviewProps, {}> {
+  public static defaultProps: Partial<ReviewProps> = {
+    reviewState: {
+      viewState: ViewState.Front,
+      time: 0,
+    },
+  }
+
   render() {
     const { card, reviewState } = this.props
 

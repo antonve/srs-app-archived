@@ -16,11 +16,21 @@ const StyledApp = styled.div`
   height: 100vh;
 `
 
+const exampleCard = {
+  deckID: 1,
+  cardTypeID: 1,
+  fields: {
+    front: 'こんにちは',
+    back: 'Hello',
+  },
+  tags: [] as string[],
+}
+
 export class App extends React.Component<{}, {}> {
   render() {
     return (
       <StyledApp>
-        <Review />
+        <Review card={exampleCard} />
       </StyledApp>
     )
   }
