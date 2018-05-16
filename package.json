@@ -39,6 +39,7 @@
     "@babel/preset-env": "^7.0.0-beta.46",
     "@babel/preset-react": "^7.0.0-beta.46",
     "@types/enzyme": "^3.1.10",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/html-webpack-plugin": "^2.30.3",
     "@types/jest": "^22.2.3",
     "@types/react": "^16.3.13",
@@ -85,7 +86,7 @@
     "moduleNameMapper": {
       "src/(.*)": "<rootDir>/src/$1"
     },
-    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "setupTestFrameworkScriptFile": "./src/setupTests.ts",
     "testRegex": "\\.spec\\.(jsx?|tsx?)$",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
