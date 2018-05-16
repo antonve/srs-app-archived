@@ -50,9 +50,6 @@ test('ActionBar triggers gradeHandler when clicking grading button', () => {
   }
   const tree = shallow(<ActionBar {...props} />)
 
-  tree
-    .find(Button)
-    .first()
-    .simulate('click')
-  expect(props.gradeHandler).toHaveBeenCalled()
+  tree.find(Button).forEach(button => button.simulate('click'))
+  expect(props.gradeHandler).toHaveBeenCalledTimes(2)
 })
