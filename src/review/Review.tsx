@@ -10,23 +10,19 @@ export interface ReviewProps {
   handleGrade: (grade: Grade) => void
 }
 
-export class Review extends React.Component<ReviewProps, {}> {
-  public static defaultProps: Partial<ReviewProps> = {
-    viewState: ViewState.Front,
+export const Review: React.SFC<ReviewProps> = ({ card, viewState, handleReveal, handleGrade }) => {
+  if (!card) {
+    return <>Nothing to review.</>
   }
 
-  render() {
-    const { card, viewState, handleReveal, handleGrade } = this.props
+  return (
+    <>
+      <CardRenderer card={card} viewState={viewState} />
+      <ActionBar viewState={viewState} handleReveal={handleReveal} handleGrade={handleGrade} />
+    </>
+  )
+}
 
-    if (!card) {
-      return <>Nothing to review.</>
-    }
-
-    return (
-      <>
-        <CardRenderer card={card} viewState={viewState} />
-        <ActionBar viewState={viewState} handleReveal={handleReveal} handleGrade={handleGrade} />
-      </>
-    )
-  }
+Review.defaultProps = {
+  viewState: ViewState.Front,
 }
