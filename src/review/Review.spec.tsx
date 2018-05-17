@@ -2,11 +2,10 @@ import * as React from 'react'
 import { create } from 'react-test-renderer'
 
 import { Review } from 'src/review/Review'
-import { Card } from 'src/data/Card'
-import { ViewState } from 'src/cards/CardRenderer'
+import { Card, ViewState } from 'src/model/interfaces'
 
 test('Review shows empty state', () => {
-  const component = create(<Review />)
+  const component = create(<Review handleReveal={jest.fn()} handleGrade={jest.fn()} />)
   let tree = component.toJSON()
   expect(tree).toBe('Nothing to review.')
 })
@@ -23,12 +22,8 @@ describe('Review with proper card data', () => {
       tags: [],
       fields,
     }
-    const state = {
-      time: 0,
-      viewState,
-    }
 
-    return create(<Review card={card} reviewState={state} />)
+    return create(<Review card={card} viewState={viewState} handleReveal={jest.fn()} handleGrade={jest.fn()} />)
   }
 
   it('renders front card content on load', () => {

@@ -1,28 +1,22 @@
 import * as React from 'react'
-import { Card } from 'src/data/Card'
-import { CardRenderer, ViewState } from 'src/cards/CardRenderer'
+import { Card, ViewState, Grade } from 'src/model/interfaces'
+import { CardRenderer } from 'src/cards/CardRenderer'
 import { ActionBar } from 'src/review/ActionBar'
-
-export interface ReviewState {
-  viewState: ViewState
-  time: number
-}
 
 export interface ReviewProps {
   card?: Card
-  reviewState?: ReviewState
+  viewState?: ViewState
+  handleReveal: () => void
+  handleGrade: (grade: Grade) => void
 }
 
 export class Review extends React.Component<ReviewProps, {}> {
   public static defaultProps: Partial<ReviewProps> = {
-    reviewState: {
-      viewState: ViewState.Front,
-      time: 0,
-    },
+    viewState: ViewState.Front,
   }
 
   render() {
-    const { card, reviewState } = this.props
+    const { card, viewState, handleReveal, handleGrade } = this.props
 
     if (!card) {
       return <>Nothing to review.</>
@@ -30,8 +24,8 @@ export class Review extends React.Component<ReviewProps, {}> {
 
     return (
       <>
-        <CardRenderer card={card} viewState={reviewState.viewState} />
-        <ActionBar reviewState={reviewState} />
+        <CardRenderer card={card} viewState={viewState} />
+        <ActionBar viewState={viewState} handleReveal={handleReveal} handleGrade={handleGrade} />
       </>
     )
   }
