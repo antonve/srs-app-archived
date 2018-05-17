@@ -5,7 +5,7 @@ import { Review } from 'src/review/Review'
 import { Card, ViewState } from 'src/model/interfaces'
 
 test('Review shows empty state', () => {
-  const component = create(<Review revealHandler={jest.fn()} gradeHandler={jest.fn()} />)
+  const component = create(<Review handleReveal={jest.fn()} handleGrade={jest.fn()} />)
   let tree = component.toJSON()
   expect(tree).toBe('Nothing to review.')
 })
@@ -23,7 +23,7 @@ describe('Review with proper card data', () => {
       fields,
     }
 
-    return create(<Review card={card} viewState={viewState} revealHandler={jest.fn()} gradeHandler={jest.fn()} />)
+    return create(<Review card={card} viewState={viewState} handleReveal={jest.fn()} handleGrade={jest.fn()} />)
   }
 
   it('renders front card content on load', () => {

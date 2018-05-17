@@ -6,8 +6,8 @@ import { ActionBar } from 'src/review/ActionBar'
 export interface ReviewProps {
   card?: Card
   viewState?: ViewState
-  revealHandler: () => void
-  gradeHandler: (grade: Grade) => void
+  handleReveal: () => void
+  handleGrade: (grade: Grade) => void
 }
 
 export class Review extends React.Component<ReviewProps, {}> {
@@ -16,7 +16,7 @@ export class Review extends React.Component<ReviewProps, {}> {
   }
 
   render() {
-    const { card, viewState, revealHandler, gradeHandler } = this.props
+    const { card, viewState, handleReveal, handleGrade } = this.props
 
     if (!card) {
       return <>Nothing to review.</>
@@ -25,7 +25,7 @@ export class Review extends React.Component<ReviewProps, {}> {
     return (
       <>
         <CardRenderer card={card} viewState={viewState} />
-        <ActionBar viewState={viewState} revealHandler={revealHandler} gradeHandler={gradeHandler} />
+        <ActionBar viewState={viewState} handleReveal={handleReveal} handleGrade={handleGrade} />
       </>
     )
   }

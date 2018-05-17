@@ -52,8 +52,6 @@ export class ReviewContainer extends React.Component<{}, {}> {
   render() {
     const { card, reviewState } = this.state
 
-    return (
-      <Review card={card} viewState={reviewState.viewState} revealHandler={this.reveal} gradeHandler={this.grade} />
-    )
+    return <Review card={card} viewState={reviewState.viewState} handleReveal={this.reveal} handleGrade={this.grade} />
   }
 }

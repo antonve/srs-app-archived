@@ -9,8 +9,8 @@ import { Button } from 'src/ui/components'
 describe('ActionBar', () => {
   const initialProps = {
     viewState: ViewState.Front,
-    revealHandler: jest.fn(),
-    gradeHandler: jest.fn(),
+    handleReveal: jest.fn(),
+    handleGrade: jest.fn(),
   }
 
   test('shows `reveal state` button on init', () => {
@@ -31,15 +31,15 @@ describe('ActionBar', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  test('triggers revealHandler after clicking reveal', () => {
+  test('triggers handleReveal after clicking reveal', () => {
     const props = initialProps
     const tree = shallow(<ActionBar {...props} />)
 
     tree.find(Button).simulate('click')
-    expect(props.revealHandler).toHaveBeenCalled()
+    expect(props.handleReveal).toHaveBeenCalled()
   })
 
-  test('triggers gradeHandler when clicking grading button', () => {
+  test('triggers handleGrade when clicking grading button', () => {
     const props = {
       ...initialProps,
       viewState: ViewState.Back,
@@ -47,6 +47,6 @@ describe('ActionBar', () => {
     const tree = shallow(<ActionBar {...props} />)
 
     tree.find(Button).forEach(button => button.simulate('click'))
-    expect(props.gradeHandler).toHaveBeenCalledTimes(2)
+    expect(props.handleGrade).toHaveBeenCalledTimes(2)
   })
 })

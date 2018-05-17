@@ -4,22 +4,22 @@ import { Button } from 'src/ui/components'
 
 export interface ActionBarProps {
   viewState: ViewState
-  revealHandler: () => void
-  gradeHandler: (grade: Grade) => void
+  handleReveal: () => void
+  handleGrade: (grade: Grade) => void
 }
 
 export class ActionBar extends React.Component<ActionBarProps, {}> {
   renderFrontActions = () => {
-    return <Button label="Reveal card" onClick={this.props.revealHandler} />
+    return <Button label="Reveal card" onClick={this.props.handleReveal} />
   }
 
   renderBackActions = () => {
-    const { gradeHandler } = this.props
+    const { handleGrade } = this.props
 
     return (
       <>
-        <Button label="Wrong" onClick={() => gradeHandler(Grade.Wrong)} />
-        <Button label="Correct" onClick={() => gradeHandler(Grade.Correct)} />
+        <Button label="Wrong" onClick={() => handleGrade(Grade.Wrong)} />
+        <Button label="Correct" onClick={() => handleGrade(Grade.Correct)} />
       </>
     )
   }
