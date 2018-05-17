@@ -5,5 +5,5 @@ export interface Card {
   deckID: number
   cardTypeID: number
   fields: { [K in ViewState]: ReactNode }
-  tags: Array<string>
+  tags: string[]
 }
