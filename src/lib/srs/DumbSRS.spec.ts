@@ -22,7 +22,6 @@ describe('DumbSRS', () => {
 
   it('Adds seven days to the next review date if correct', () => {
     const gradedItem: Reviewable = srs.grade(item, 1)
-
     expect(gradedItem).toMatchSnapshot()
   })
 
