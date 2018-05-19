@@ -3,7 +3,7 @@ import { SRSLibrary, Reviewable, Score } from 'src/lib/srs/main'
 export class DumbSRS implements SRSLibrary {
   private calculateNextReviewDate(item: Reviewable, score: Score): Date {
     const nextDate = new Date()
-    nextDate.setDate(nextDate.getDate() + 7)
+    nextDate.setDate(nextDate.getDate() + 6 * score + 1)
 
     return nextDate
   }
