@@ -18,7 +18,7 @@ export interface Reviewable {
 export type Score = number
 
 export interface SRSLibrary {
-  grade(item: Reviewable, score: Score): void
+  grade(item: Reviewable, score: Score): Reviewable
 }
 
 export { DumbSRS as SRS } from 'src/lib/srs/DumbSRS'
