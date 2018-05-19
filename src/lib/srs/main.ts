@@ -1,27 +1,24 @@
 export interface GradeRecord {
   // Data of the grading itself
-  timestamp: Date
+  reviewedDate: Date
   score: Score
 
   // Data after calculating review
   ease: number
+  nextReviewDate: Date
 }
 
 export interface Reviewable {
   currentEase: number
-  nextReviewData: Date
+  nextReviewDate: Date
   gradeHistory: GradeRecord[]
 }
 
 // Range should be between 0..1.0 as it's a percentage
-type Score = number
+export type Score = number
 
-export interface SRS {
+export interface SRSLibrary {
   grade(item: Reviewable, score: Score): void
 }
 
-export class DumbSRS implements SRS {
-  grade(item: Reviewable, score: Score) {
-    console.log('test')
-  }
-}
+export { DumbSRS as SRS } from 'src/lib/srs/DumbSRS'
