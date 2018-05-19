@@ -12,6 +12,7 @@ describe('DumbSRS', () => {
   }
 
   beforeAll(() => {
+    // May 19 2018
     MockDate.set(1526713164815)
   })
 
@@ -20,10 +21,18 @@ describe('DumbSRS', () => {
   })
 
   it('Adds seven days to the next review date if correct', () => {
-    const gradedItem: Reviewable = srs.grade(item, 1)
+    const score: Score = 1
+    const gradedItem: Reviewable = srs.grade(item, score)
+    const currentDate = new Date()
+
     expect(gradedItem.currentEase).toBe(item.currentEase)
     expect(gradedItem.nextReviewDate.toDateString()).toBe('Sat May 26 2018')
+
     expect(gradedItem.gradeHistory.length).toBe(1)
+    expect(gradedItem.gradeHistory[0].score).toBe(score)
+    expect(gradedItem.gradeHistory[0].reviewedDate).toEqual(currentDate)
+    expect(gradedItem.gradeHistory[0].ease).toBe(item.currentEase)
+    expect(gradedItem.gradeHistory[0].nextReviewDate.toDateString()).toBe('Sat May 26 2018')
   })
 
   it('Adds 1 day to the next review date if incorrect', () => {})
