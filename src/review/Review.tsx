@@ -1,31 +1,28 @@
 import * as React from 'react'
-import { Card } from 'src/data/Card'
-import { CardRenderer, ViewState } from 'src/cards/CardRenderer'
+import { Card, ViewState, Grade } from 'src/model/interfaces'
+import { CardRenderer } from 'src/cards/CardRenderer'
 import { ActionBar } from 'src/review/ActionBar'
-
-export interface ReviewState {
-  viewState: ViewState
-  time: number
-}
 
 export interface ReviewProps {
   card?: Card
-  reviewState?: ReviewState
+  viewState?: ViewState
+  handleReveal: () => void
+  handleGrade: (grade: Grade) => void
 }
 
-export class Review extends React.Component<ReviewProps, {}> {
-  render() {
-    const { card, reviewState } = this.props
-
-    if (!card) {
-      return <>Nothing to review.</>
-    }
-
-    return (
-      <>
-        <CardRenderer card={card} viewState={reviewState.viewState} />
-        <ActionBar reviewState={reviewState} />
-      </>
-    )
+export const Review: React.SFC<ReviewProps> = ({ card, viewState, handleReveal, handleGrade }) => {
+  if (!card) {
+    return <>Nothing to review.</>
   }
+
+  return (
+    <>
+      <CardRenderer card={card} viewState={viewState} />
+      <ActionBar viewState={viewState} handleReveal={handleReveal} handleGrade={handleGrade} />
+    </>
+  )
+}
+
+Review.defaultProps = {
+  viewState: ViewState.Front,
 }

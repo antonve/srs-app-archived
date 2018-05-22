@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Review } from './review/Review'
+import { ReviewContainer } from './review/ReviewContainer'
 import { theme } from 'src/ui/components'
 import styled, { injectGlobal } from 'styled-components'
 
@@ -20,7 +20,7 @@ export class App extends React.Component<{}, {}> {
   render() {
     return (
       <StyledApp>
-        <Review />
+        <ReviewContainer />
       </StyledApp>
     )
   }

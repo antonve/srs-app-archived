@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DumbSRS Adds 1 day to the next review date if incorrect 1`] = `
+Object {
+  "currentEase": 2.8,
+  "gradeHistory": Array [
+    Object {
+      "ease": 2.8,
+      "nextReviewDate": 2018-05-20T06:59:24.815Z,
+      "reviewedDate": 2018-05-19T06:59:24.815Z,
+      "score": 0,
+    },
+  ],
+  "nextReviewDate": 2018-05-20T06:59:24.815Z,
+}
+`;
+
+exports[`DumbSRS Adds seven days to the next review date if correct 1`] = `
+Object {
+  "currentEase": 2.8,
+  "gradeHistory": Array [
+    Object {
+      "ease": 2.8,
+      "nextReviewDate": 2018-05-26T06:59:24.815Z,
+      "reviewedDate": 2018-05-19T06:59:24.815Z,
+      "score": 1,
+    },
+  ],
+  "nextReviewDate": 2018-05-26T06:59:24.815Z,
+}
+`;
