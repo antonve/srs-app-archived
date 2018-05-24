@@ -1,5 +1,6 @@
-import RxDB, { RxCollectionCreator, QueryChangeDetector, RxJsonSchema, RxDatabase, RxCollection } from 'rxdb'
+import RxDB, { RxCollectionCreator, QueryChangeDetector, RxDatabase, RxCollection } from 'rxdb'
 import * as pouchdbAdapterIdb from 'pouchdb-adapter-idb'
+
 import { CardSchema, CardCollectionCreator } from 'src/database/schema'
 import { seed } from 'src/database/seed'
 
