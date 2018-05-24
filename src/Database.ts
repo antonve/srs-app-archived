@@ -46,7 +46,7 @@ const cardSchema: RxJsonSchema = {
 
 const collections: (RxCollectionCreator)[] = [
   {
-    name: 'decks',
+    name: 'cards',
     schema: cardSchema,
     methods: {},
     // @ts-ignore
@@ -85,7 +85,7 @@ const _create = async function() {
 
   // hooks
   console.log('DatabaseService: add test data')
-  await db.collections.decks.insert({
+  await db.collections.cards.insert({
     ID: '1',
     deckID: '1',
     fields: {
