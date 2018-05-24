@@ -85,7 +85,7 @@ const _create = async function() {
 
   // hooks
   console.log('DatabaseService: add test data')
-  await db.collections.cards.insert({
+  await db.collections.cards.upsert({
     ID: '1',
     deckID: '1',
     fields: {
