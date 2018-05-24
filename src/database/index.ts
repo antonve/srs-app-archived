@@ -1,6 +1,7 @@
 import RxDB, { RxCollectionCreator, QueryChangeDetector, RxJsonSchema, RxDatabase, RxCollection } from 'rxdb'
 import * as pouchdbAdapterIdb from 'pouchdb-adapter-idb'
 import { CardSchema, CardCollectionCreator } from 'src/database/schema'
+import { seed } from 'src/database/seed'
 
 QueryChangeDetector.enable()
 QueryChangeDetector.enableDebugging()
@@ -11,18 +12,6 @@ const collections: (RxCollectionCreator)[] = [CardCollectionCreator]
 
 export interface DatabaseCollection {
   cards: RxCollection<CardSchema>
-}
-
-const seed = async (db: RxDatabase) => {
-  await db.collections.cards.upsert({
-    ID: '1',
-    deckID: '1',
-    fields: {
-      front: 'test front',
-      back: 'test back',
-    },
-    tags: [],
-  })
 }
 
 const _create = async function() {
