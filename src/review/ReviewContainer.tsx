@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Card, ViewState, Grade } from 'src/model/interfaces'
 import { Review } from 'src/review/Review'
 import * as DB from 'src/Database'
+import { CardSchema } from 'src/model/schema/Card'
 
 export interface ReviewState {
   viewState: ViewState
@@ -14,10 +15,10 @@ interface State {
 }
 
 export class ReviewContainer extends React.Component<{}, {}> {
-  componentDidMount() {
-    DB.get().then(db => {
-      db.collections.cards.findOne().$.subscribe((card: DB.CardSchema) => this.setState({ card }))
-    })
+  async componentDidMount() {
+    const db = await DB.get()
+
+    db.collections.cards.findOne().$.subscribe((card: CardSchema) => this.setState({ card }))
   }
 
   state: State = {

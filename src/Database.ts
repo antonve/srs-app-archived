@@ -1,65 +1,13 @@
 import RxDB, { RxCollectionCreator, QueryChangeDetector, RxJsonSchema, RxDatabase, RxCollection } from 'rxdb'
 import * as pouchdbAdapterIdb from 'pouchdb-adapter-idb'
-import { Card } from 'src/model/interfaces'
+import { CardSchema, CardCollectionCreator } from 'src/model/schema/Card'
 
 QueryChangeDetector.enable()
 QueryChangeDetector.enableDebugging()
 
 RxDB.plugin(require('pouchdb-adapter-idb'))
 
-const cardSchema: RxJsonSchema = {
-  title: 'card schema',
-  version: 0,
-  type: 'object',
-  properties: {
-    ID: {
-      type: 'string',
-      primary: true,
-    },
-    deckID: {
-      type: 'string',
-      index: true,
-    },
-    cardTypeID: {
-      type: 'number',
-    },
-    fields: {
-      type: 'object',
-      properties: {
-        front: {
-          type: 'string',
-        },
-        back: {
-          type: 'string',
-        },
-      },
-    },
-    tags: {
-      type: 'array',
-      items: {
-        type: 'string',
-      },
-    },
-  },
-  required: ['ID', 'fields'],
-}
-
-const collections: (RxCollectionCreator)[] = [
-  {
-    name: 'cards',
-    schema: cardSchema,
-    methods: {},
-    // @ts-ignore
-    sync: true,
-  },
-]
-
-export interface CardSchema {
-  ID: number
-  deckID: number
-  fields: string[]
-  tags: string[]
-}
+const collections: (RxCollectionCreator)[] = [CardCollectionCreator]
 
 export interface DatabaseCollection {
   cards: RxCollection<CardSchema>
