@@ -1,56 +1,75 @@
 import RxDB, { RxCollectionCreator, QueryChangeDetector, RxJsonSchema, RxDatabase, RxCollection } from 'rxdb'
 import * as pouchdbAdapterIdb from 'pouchdb-adapter-idb'
+import { Card } from 'src/model/interfaces'
 
 QueryChangeDetector.enable()
 QueryChangeDetector.enableDebugging()
 
 RxDB.plugin(require('pouchdb-adapter-idb'))
 
-const heroSchema: RxJsonSchema = {
-  title: 'hero schema',
-  description: 'describes a simple hero',
+const cardSchema: RxJsonSchema = {
+  title: 'card schema',
   version: 0,
   type: 'object',
   properties: {
-    name: {
+    ID: {
       type: 'string',
       primary: true,
     },
-    color: {
+    deckID: {
       type: 'string',
+      index: true,
+    },
+    cardTypeID: {
+      type: 'number',
+    },
+    fields: {
+      type: 'object',
+      properties: {
+        front: {
+          type: 'string',
+        },
+        back: {
+          type: 'string',
+        },
+      },
+    },
+    tags: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
     },
   },
-  required: ['color'],
+  required: ['ID', 'fields'],
 }
 
 const collections: (RxCollectionCreator)[] = [
   {
-    name: 'heroes',
-    schema: heroSchema,
-    methods: {
-      hpPercent() {
-        return this.hp / this.maxHP * 100
-      },
-    },
+    name: 'decks',
+    schema: cardSchema,
+    methods: {},
     // @ts-ignore
     sync: true,
   },
 ]
 
-export interface HeroSchema {
-  name: string
-  color: string
+export interface CardSchema {
+  ID: number
+  deckID: number
+  fields: string[]
+  tags: string[]
 }
 
 export interface DatabaseCollection {
-  heroes: RxCollection<HeroSchema>
+  heroes: RxCollection<CardSchema>
 }
 
 let dbPromise: Promise<RxDatabase> = null
 
 const _create = async function() {
   console.log('DatabaseService: creating database..')
-  const db = await RxDB.create({ name: 'heroesreactdb', adapter: 'idb' })
+  const db = await RxDB.create({ name: 'srsdb', adapter: 'idb' })
   console.log('DatabaseService: created database')
   window['db'] = db // write to window for debugging
 
@@ -65,20 +84,17 @@ const _create = async function() {
   await Promise.all(collections.map(colData => db.collection(colData)))
 
   // hooks
-  console.log('DatabaseService: add hooks')
-  db.collections.heroes.preInsert((docObj: any) => {
-    const color = docObj.color
-    return db.collections.heroes
-      .findOne({ color })
-      .exec()
-      .then((has: any) => {
-        if (has != null) {
-          alert('another hero already has the color ' + color)
-          throw new Error('color already there')
-        }
-        return db
-      })
+  console.log('DatabaseService: add test data')
+  await db.collections.decks.insert({
+    ID: '1',
+    deckID: '1',
+    fields: {
+      front: 'test front',
+      back: 'test back',
+    },
+    tags: [],
   })
+
   return db
 }
 
