@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Card, ViewState, Grade } from 'src/model/interfaces'
 import { Review } from 'src/review/Review'
-import * as DB from 'src/Database'
-import { CardSchema } from 'src/model/schema/Card'
+import * as DB from 'src/database'
+import { CardSchema } from 'src/database/schema'
 
 export interface ReviewState {
   viewState: ViewState
