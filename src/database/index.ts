@@ -1,7 +1,8 @@
 import RxDB, { RxCollectionCreator, QueryChangeDetector, RxDatabase, RxCollection } from 'rxdb'
 import * as pouchdbAdapterIdb from 'pouchdb-adapter-idb'
 
-import { CardSchema, CardCollectionCreator } from 'src/database/schema'
+import { Card } from 'src/model/interfaces'
+import { CardCollectionCreator } from 'src/database/schema'
 import { seed } from 'src/database/seed'
 
 QueryChangeDetector.enable()
@@ -12,7 +13,7 @@ RxDB.plugin(require('pouchdb-adapter-idb'))
 const collections: (RxCollectionCreator)[] = [CardCollectionCreator]
 
 export interface DatabaseCollection {
-  cards: RxCollection<CardSchema>
+  cards: RxCollection<Card>
 }
 
 const _create = async function() {

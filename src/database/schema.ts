@@ -1,1 +1,1 @@
-export { CardSchema, CardCollectionCreator } from 'src/database/schema/Card'
+export { CardCollectionCreator } from 'src/database/schema/Card'

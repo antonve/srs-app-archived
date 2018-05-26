@@ -44,10 +44,3 @@ export const CardCollectionCreator: RxCollectionCreator = {
   // @ts-ignore
   sync: true,
 }
-
-export interface CardSchema {
-  ID: number
-  deckID: number
-  fields: string[]
-  tags: string[]
-}
