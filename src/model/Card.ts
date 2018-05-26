@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { ViewState } from 'src/model/interfaces'
+import { ViewState } from 'src/model'
 
 export interface Card {
   deckID: number

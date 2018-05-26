@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card, ViewState } from 'src/model/interfaces'
+import { Card, ViewState } from 'src/model'
 
 interface CardRendererProps {
   card: Card

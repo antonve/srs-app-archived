@@ -3,7 +3,7 @@ import { create } from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
 import { ActionBar } from 'src/review/ActionBar'
-import { ViewState } from 'src/model/interfaces'
+import { ViewState } from 'src/model'
 import { Button } from 'src/ui/components'
 
 describe('ActionBar', () => {

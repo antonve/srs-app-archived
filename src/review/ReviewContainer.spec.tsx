@@ -2,7 +2,7 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 
 import { ReviewContainer } from 'src/review/ReviewContainer'
-import { ViewState, Grade } from 'src/model/interfaces'
+import { ViewState, Grade } from 'src/model'
 
 describe('ReviewContainer', () => {
   it('reveal changes the StateView to Back', () => {
