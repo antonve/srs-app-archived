@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ViewState, Grade } from 'src/model/interfaces'
+import { ViewState, Grade } from 'src/model'
 import { Button } from 'src/ui/components'
 
 export interface ActionBarProps {

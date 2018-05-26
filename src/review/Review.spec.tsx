@@ -2,7 +2,7 @@ import * as React from 'react'
 import { create } from 'react-test-renderer'
 
 import { Review } from 'src/review/Review'
-import { Card, ViewState } from 'src/model/interfaces'
+import { Card, ViewState } from 'src/model'
 
 test('Review shows empty state', () => {
   const component = create(<Review handleReveal={jest.fn()} handleGrade={jest.fn()} />)

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card, ViewState, Grade } from 'src/model/interfaces'
+import { Card, ViewState, Grade } from 'src/model'
 import { CardRenderer } from 'src/cards/CardRenderer'
 import { ActionBar } from 'src/review/ActionBar'
 

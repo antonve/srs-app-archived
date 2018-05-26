@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card, ViewState, Grade } from 'src/model/interfaces'
+import { Card, ViewState, Grade } from 'src/model'
 import { Review } from 'src/review/Review'
 import * as DB from 'src/database'
 
