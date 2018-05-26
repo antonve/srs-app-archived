@@ -16,7 +16,7 @@ export interface DatabaseCollection {
   cards: RxCollection<Card>
 }
 
-const _create = async function() {
+const createDatabase = async function() {
   const db = await RxDB.create({ name: 'srsdb', adapter: 'idb' })
 
   await db.waitForLeadership()
@@ -26,12 +26,12 @@ const _create = async function() {
   return db
 }
 
-let dbPromise: Promise<RxDatabase> = null
+let databasePromise: Promise<RxDatabase> = null
 
 export function get() {
-  if (!dbPromise) {
-    dbPromise = _create()
+  if (!databasePromise) {
+    databasePromise = createDatabase()
   }
 
-  return dbPromise
+  return databasePromise
 }
