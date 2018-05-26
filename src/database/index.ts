@@ -1,9 +1,11 @@
-import RxDB, { RxCollectionCreator, QueryChangeDetector, RxDatabase, RxCollection } from 'rxdb'
+import RxDB, { RxDatabaseCreator, RxCollectionCreator, QueryChangeDetector, RxDatabase, RxCollection } from 'rxdb'
 import * as pouchdbAdapterIdb from 'pouchdb-adapter-idb'
 
 import { Card } from 'src/model'
 import { CardCollectionCreator } from 'src/database/schema'
 import { seed } from 'src/database/seed'
+
+const databaseConfig: RxDatabaseCreator = { name: 'srsdb', adapter: 'idb' }
 
 QueryChangeDetector.enable()
 QueryChangeDetector.enableDebugging()
@@ -16,8 +18,8 @@ export interface DatabaseCollection {
   cards: RxCollection<Card>
 }
 
-const createDatabase = async function() {
-  const db = await RxDB.create({ name: 'srsdb', adapter: 'idb' })
+const createDatabase = async function(creator: RxDatabaseCreator) {
+  const db = await RxDB.create(creator)
 
   await db.waitForLeadership()
   await Promise.all(collections.map(colData => db.collection(colData)))
@@ -30,7 +32,7 @@ let databasePromise: Promise<RxDatabase> = null
 
 export function get() {
   if (!databasePromise) {
-    databasePromise = createDatabase()
+    databasePromise = createDatabase(databaseConfig)
   }
 
   return databasePromise
