@@ -15,8 +15,5 @@
       "src/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "./webpack*"],
-  "files": [
-    "src/typings/typings.d.ts"
-  ]
+  "include": ["src/**/*", "./webpack*"]
 }
