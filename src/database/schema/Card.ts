@@ -14,7 +14,7 @@ const cardSchema: RxJsonSchema = {
       index: true,
     },
     cardTypeID: {
-      type: 'number',
+      type: 'string',
     },
     fields: {
       type: 'object',

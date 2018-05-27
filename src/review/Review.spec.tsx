@@ -18,7 +18,7 @@ describe('Review with proper card data', () => {
     }
     const card: Card = {
       deckID: 1,
-      cardTypeID: 1,
+      cardTypeID: '1',
       tags: [],
       fields,
     }
