@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Review } from './review/Review'
-import { DeckMenu } from './deck_menu/DeckMenu'
+import { DeckList } from './decks/DeckList'
+import { Deck } from './data/Deck'
 import { Card } from './data/Card'
 import { theme } from 'src/ui/components'
 import styled, { injectGlobal } from 'styled-components'
@@ -28,7 +29,7 @@ const StyledApp = styled.div`
 //   tags: [] as string[],
 // }
 
-const exampleDeck = {
+const exampleDeck: Deck = {
   deckID: 1,
   deckName: 'n5 typescript',
   cards: [] as Card[],
@@ -39,7 +40,7 @@ export class App extends React.Component<{}, {}> {
   render() {
     return (
       <StyledApp>
-        <DeckMenu deck={exampleDeck} />
+        <DeckList deck={exampleDeck} />
       </StyledApp>
     )
   }
