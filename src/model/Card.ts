@@ -12,6 +12,7 @@ export interface Card {
   // the key is the index of the CardField
   fields: { [k: string]: CardFieldData }
   tags: string[]
+  cardType?: CardType
 }
 
 export interface CardField {
@@ -23,7 +24,7 @@ export interface CardType {
   ID: string
   name: string
   fields: CardField[]
-  templates: CardTemplate[]
+  template: CardTemplate
 }
 
 export interface CardTemplate {

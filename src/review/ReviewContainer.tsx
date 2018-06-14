@@ -17,7 +17,14 @@ export class ReviewContainer extends React.Component<{}, {}> {
   async componentDidMount() {
     const db = await DB.get()
 
-    db.collections.cards.findOne().$.subscribe((card: Card) => this.setState({ card }))
+    db.collections.cards.findOne().$.subscribe(async (card: Card) => {
+      card.cardType = await db.collections.cardTypes
+        .findOne()
+        .where('ID')
+        .eq(card.cardTypeID)
+        .exec()
+      this.setState({ card })
+    })
   }
 
   state: State = {
