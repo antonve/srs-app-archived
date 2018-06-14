@@ -20,15 +20,16 @@ const cardTypeSchema: RxJsonSchema = {
         },
       },
     },
-    templates: {
+    template: {
       type: 'object',
       properties: {
         front: { type: 'string' },
         back: { type: 'string' },
+        styles: { type: 'string' },
       },
     },
   },
-  required: ['ID', 'name', 'fields', 'fields'],
+  required: ['ID', 'name', 'fields', 'template'],
 }
 
 export const CardTypeCollectionCreator: RxCollectionCreator = {
