@@ -1,5 +1,4 @@
-export { Card } from 'src/model/Card'
-export { CardType } from 'src/model/CardType'
+export { Card, CardType, CardField, CardFieldID, CardFieldData } from 'src/model/Card'
 
 export enum ViewState {
   Front = 'front',
