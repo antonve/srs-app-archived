@@ -23,5 +23,11 @@ export interface CardType {
   ID: string
   name: string
   fields: CardField[]
-  templates: string[]
+  templates: CardTemplate[]
+}
+
+export interface CardTemplate {
+  front: string
+  back: string
+  styles: string
 }
