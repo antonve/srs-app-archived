@@ -2471,9 +2471,10 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron-compile@^6.4.2:
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/electron-compile/-/electron-compile-6.4.2.tgz#eb989eeac727646cbf8619217f53eeae8ee708c1"
+electron-compile@^6.4.4:
+  version "6.4.4"
+  resolved "https://registry.yarnpkg.com/electron-compile/-/electron-compile-6.4.4.tgz#24c5bc4c937856fcc9141cf3cc7251172e0205df"
+  integrity sha512-LEOq5Tt7fAfONEyYLR0Ue1kL6/H8NAX6s9ouw4g6Azhu6onWh166fnf2O7Y3f9qkQEqYzwZl49Rd/QWxLG2AYw==
   dependencies:
     "@paulcbetts/mime-types" "^2.1.10"
     "@types/node" "^7.0.12"
