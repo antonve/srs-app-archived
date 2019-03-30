@@ -74,7 +74,7 @@
     "prop-types": "^15.6.1",
     "react-hot-loader": "^4.1.2",
     "react-test-renderer": "^16.3.2",
-    "ts-jest": "^23.0.0",
+    "ts-jest": "^24.0.1",
     "ts-node": "^6.0.2",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.12.0",
