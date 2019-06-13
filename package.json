@@ -25,7 +25,7 @@
   "author": "SRS Project",
   "license": "MIT",
   "dependencies": {
-    "pouchdb-adapter-idb": "^6.4.3",
+    "pouchdb-adapter-idb": "^7.1.0",
     "polished": "^1.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
