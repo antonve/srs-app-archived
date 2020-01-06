@@ -30,7 +30,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-transition-group": "^2.3.1",
-    "rxdb": "^7.6.0",
+    "rxdb": "^8.7.5",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
     "react-transition-group": "^2.3.1",
