@@ -60,7 +60,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "coveralls": "^3.0.1",
     "cross-env": "^5.1.4",
-    "electron": "^2.0.0",
+    "electron": "^8.3.0",
     "electron-compile": "^6.4.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
